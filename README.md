@@ -1,6 +1,6 @@
 # Прикладной центр машинного обучения, анализа данных и статистики
 ## Website SSR
-
+![alt text](https://eusp.org/sites/default/files/inline-images/MAST_site_ru.jpeg)
 ## React, Nextjs, Typescript 
 
 ## Development
