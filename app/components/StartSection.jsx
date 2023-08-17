@@ -42,7 +42,7 @@ const StartSection = () => {
         top={'calc(100vh - 120px)'}
         icon={<BrandDownIcon />}
         />
-      <hr class="colored"></hr>
+      {/* <hr class="colored"></hr> */}
     </Box>
   );
 };

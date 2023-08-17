@@ -31,7 +31,7 @@ const MenuIcon = (props) => (
     />
   </Icon>
 );
-const HeaderLogo = (props) =>
+const HeaderLogoIcon = (props) =>
   props.show ? (
     <Icon viewBox="0 0 182 90" width={"182px"} height={"90px"} {...props}>
       {props.isDark ? (
@@ -162,4 +162,4 @@ const BrandDownIcon = (props) => {
   <circle id="border" cx="22.0874" cy="47.9126" r="21.0874" stroke="rgba(0,0,0,0)" stroke-width="2" fill="none"/>
   </Icon>
 }
-export { MenuIcon, HeaderLogo, CustomCloseIcon, BrandDownIcon };
+export { MenuIcon, HeaderLogoIcon, CustomCloseIcon, BrandDownIcon };
