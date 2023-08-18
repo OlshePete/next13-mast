@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import { Box, Stack, Text } from "@chakra-ui/layout";
 import {
@@ -6,8 +7,9 @@ import {
   DrawerContent,
 } from "@chakra-ui/modal";
 import Image from "next/image";
-import Link from "next/link";
-import { CustomCloseIcon } from "./CustomIcons";
+// import Link from "next/link";
+import { CustomCloseIcon } from "../CustomIcons";
+// import { useDisclosure } from "@chakra-ui/react";
 
 const NAV_ITEMS = [
   {
@@ -36,13 +38,15 @@ const NAV_ITEMS = [
   },
 ];
 
-const MenuDrawer = ({ isOpen, onClose }) => {
+const MenuDrawer = ({ isOpen, onToggle }) => {
+  // const  = useDisclosure();
+console.log("###",isOpen);
   return (
     <Drawer
       isOpen={isOpen}
       placement="right"
       variant="brand"
-      onClose={onClose}
+      onClose={onToggle}
       size={"full"}
       py={"50px"}
     >
@@ -58,7 +62,7 @@ const MenuDrawer = ({ isOpen, onClose }) => {
           justifyContent="space-between"
           px={"50px"}
         >
-          <Box onClick={onClose} position="absolute" top="50px" right="50px">
+          <Box onClick={onToggle} position="absolute" top="50px" right="50px">
             <CustomCloseIcon />
           </Box>
           <Box h="100%" pt="150px">
@@ -75,7 +79,7 @@ const MenuDrawer = ({ isOpen, onClose }) => {
           <Stack>
             {NAV_ITEMS.map((item) => (
               <Text
-                onClick={()=>onClose()}
+                onClick={()=>onToggle()}
                 as={'a'}
                 href={'#'+item.href}
                 variant="nav_link"
