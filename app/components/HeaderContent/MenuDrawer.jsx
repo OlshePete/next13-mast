@@ -18,15 +18,15 @@ const NAV_ITEMS = [
   },
   {
     name: "исследования",
-    href: "products",
+    href: "block-research",
   },
   {
     name: "обучение",
-    href: "products",
+    href: "block-training",
   },
   {
     name: "разработка",
-    href: "products",
+    href: "block-developing",
   },
   {
     name: "о центре",

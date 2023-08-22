@@ -36,6 +36,22 @@ export const theme = extendTheme({
             color: "brand.900",
           },
         },
+        products_link: {
+          color: "#FFF",
+          cursor: "pointer",
+          textShadow: "0px 4px 4px rgba(255, 255, 255, 0.05)",
+          fontFamily: "Orchidea Pro",
+          fontSize: "32px",
+          fontStyle: "normal",
+          fontWeight: "400",
+          lineHeight: "119.5%",
+          letterSpacing: "2.64px",
+          textTransform: "uppercase",
+          transition: "all 0.2s ease-in-out",
+          _hover: {
+            color: "brand.900",
+          },
+        },
       },
     },
     Heading: {

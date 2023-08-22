@@ -2,21 +2,28 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  scroll-behavior:smooth;
+  scroll-behavior: smooth;
 }
+
 body {
-  background-color: #22356f!important;
+  background-color: #22356f !important;
 }
-.menu-btn > * {
+
+.menu-btn>* {
   transition: all 0.8s ease-in-out;
 }
 
+.unviewed {
+  animation: scroll_change_caption .5s ease;
+  opacity: 0;
+}
+
 header {
-  position:sticky;
+  position: sticky;
   padding: 0 50px;
-  top:0;
-  max-width:100vw;
-  z-index:1000;
+  top: 0;
+  max-width: 100vw;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,6 +36,7 @@ header {
   background-color: #fff;
   padding: 0 50px;
 }
+
 .section.dark {
   background-color: #22356f;
 }
@@ -37,73 +45,135 @@ header {
   transform: scale(1.05);
   transition: all 0.5s ease-in-out;
 }
+
 .menu-btn:blur {
   transform: scale(1.05);
   transition: all 0.8s ease-in-out;
 }
-.menu-btn.position1 > #element0 {
+
+.menu-btn.position1>#element0 {
   transform: translate(-28.72px, 0%);
 }
-.menu-btn.position1 > #element1 {
+
+.menu-btn.position1>#element1 {
   transform: translate(0, -28.72px);
 }
-.menu-btn.position1 > #element2 {
+
+.menu-btn.position1>#element2 {
   transform: translate(28.72px, 0);
 }
-.menu-btn.position1 > #element3 {
+
+.menu-btn.position1>#element3 {
   transform: translate(0, 28.72px);
 }
 
-.menu-btn.position2 > #element0 {
+.menu-btn.position2>#element0 {
   transform: translate(-28.72px, -28.72px);
 }
-.menu-btn.position2 > #element1 {
+
+.menu-btn.position2>#element1 {
   transform: translate(28, 72px, 28, 72px);
 }
-.menu-btn.position2 > #element2 {
+
+.menu-btn.position2>#element2 {
   transform: translate(28.72px, 28.72px);
 }
-.menu-btn.position2 > #element3 {
-}
 
-.menu-btn.position3 > #element0 {
+.menu-btn.position2>#element3 {}
+
+.menu-btn.position3>#element0 {
   transform: translate(0, -28.72px);
 }
-.menu-btn.position3 > #element3 {
+
+.menu-btn.position3>#element3 {
   transform: translate(0, 28.72px);
 }
 
 @keyframes wave {
   0% {
     transform: translateY(-4px);
-    /* stroke:red; */
-    fill:"url(#gradient1)";
+    fill: "url(#gradient1)";
     opacity: 0.8;
 
   }
+
   50% {
     transform: translateY(4px);
-    fill:"url(#gradient2)";
+    fill: "url(#gradient2)";
     opacity: 0.6;
 
   }
+
   100% {
     transform: translateY(-4px);
-    /* stroke:green; */
-    fill:"url(#gradient3)";
+    fill: "url(#gradient3)";
     opacity: 1;
 
   }
 }
-.icon > #border {
+
+@keyframes scroll_change {
+  0% {
+    /* transform: translateY(-4px); */
+    /* stroke:red; */
+    fill: "url(#gradient1)";
+    /* opacity: 0.8; */
+
+  }
+
+  50% {
+    /* transform: scale(.8); */
+    fill: "url(#gradient2)";
+    /* opacity: 0.6; */
+
+  }
+
+  100% {
+    width: 180px;
+    height: 90px;
+    transform: translateY(-4px);
+    /* stroke:green; */
+    fill: "url(#gradient3)";
+    /* opacity: 1; */
+
+  }
+}
+
+@keyframes scroll_change_caption {
+  0% {
+    /* transform: scale(1); */
+    opacity: 1;
+
+  }
+
+  100% {
+    /* transform: scale(0); */
+    opacity: 0;
+  }
+}
+
+
+.main_logo_icon {
+  position: absolute;
+  animation: scroll_change 2.5s ease-in-out;
+}
+
+.main_logo_icon>#icon_caption {
+  animation: scroll_change_caption 2.5s ease-in-out;
+}
+
+.main_logo_icon>*>#icon_caption {
+  animation: scroll_change_caption 2.5s ease-in-out;
+}
+
+.icon>#border {
   transition: all .8s ease;
 }
-.icon:hover > #border {
-  stroke: red;
-}
-.icon > path {
+
+.icon>path {
   animation: wave 2.5s infinite;
 }
+
 .colored {
   margin-top: 5px;
   margin-bottom: 5px;
@@ -122,6 +192,11 @@ header {
 }
 
 @keyframes colored {
-  from {background-position: 0% 0%;}  
-    to {background-position: 200% 0%;}
+  from {
+    background-position: 0% 0%;
+  }
+
+  to {
+    background-position: 200% 0%;
+  }
 }
