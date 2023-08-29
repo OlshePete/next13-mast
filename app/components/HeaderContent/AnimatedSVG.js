@@ -45,7 +45,7 @@ const AnimatedSVG = ({  }) => {
           />
           <motion.path
             transition={'all .5s ease'}
-            fill={scrollY.get()<200?"#FEFEFE":"rgba(0,0,0,0)"}
+            fill={'#FEFEFE'}
             id="icon_caption"
             fillRule="evenodd"
             clipRule="evenodd"

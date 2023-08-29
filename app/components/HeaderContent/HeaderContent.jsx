@@ -4,12 +4,13 @@ import React from 'react'
 import {HeaderLogo} from './HeaderLogo'
 import {HeaderMenuIcon} from './HeaderMenuIcon'
 import {MenuDrawer} from './MenuDrawer'
-function HeaderContent({scrollY}) {
+import { useScroll } from 'framer-motion'
+function HeaderContent() {
+  const { scrollY } = useScroll();
   const { isOpen, onToggle } = useDisclosure();
-console.log("scrollY",scrollY)
   return (
-    <Box height={200-scrollY+'px'} flexGrow={1}>
-    <HeaderLogo scrollY={scrollY}/>
+    <Box flexGrow={1} display={'flex'}>
+    <HeaderLogo />
     <HeaderMenuIcon isOpen={isOpen} onToggle={onToggle}/>
     <MenuDrawer  isOpen={isOpen} onToggle={onToggle}/>
     </Box>

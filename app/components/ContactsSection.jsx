@@ -2,8 +2,8 @@ import React from 'react'
 
 const ContactsSection = () => {
   return (
-    <div  className='section'>
-    <h2 id='contacts'>ContactsSection</h2>
+    <div  className='section dark' id='contacts'>
+    <h2>ContactsSection</h2>
     </div>
   )
 }
