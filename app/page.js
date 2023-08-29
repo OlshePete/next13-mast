@@ -1,7 +1,8 @@
 "use client";
 import Head from "next/head";
-import { useEffect, useState } from "react";
-import { AboutSection } from "./components/AboutSection";
+import {useRouter} from "next/navigation";
+import { useEffect, useRef, useState } from "react";
+import { AboutSection } from "./components/AboutSectionContent/AboutSection";
 import { ContactsSection } from "./components/ContactsSection";
 import { ProductsSection } from "./components/ProductsSection";
 import { StartSection } from "./components/StartSection";
