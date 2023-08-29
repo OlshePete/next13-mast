@@ -17,6 +17,21 @@ const AnimatedSVG = ({ }) => {
     height.set(200 + scrollY)
   }, [scrollY])
 
+  const BoxLogo = ({ children }) => {
+    return (
+      <Box
+        style={{
+          position: "relative",
+          height: height.get(),
+          display: scrollY.get() < 200 ? "block" : "none",
+        }}
+        id="box_logo_change_color"
+      >
+        {children}
+      </Box>
+    )
+  }
+
   return (
     <MotionBox
       as={VStack}
@@ -36,46 +51,24 @@ const AnimatedSVG = ({ }) => {
         <LogoMast />
       </Box>
       <HStack
-        alignContent={'baseline'}
-        justifyContent={'flex-start'}
-        alignItems={'baseline'}
-        minH={'50px'}
         style={{
           overflow: 'hidden',
+          alignItems: 'baseline',
+          minHeight: '50px',
         }}
       >
         <Link href={'https://eusp.org/'} isExternal >
-          <Box
-            style={{
-              position: "relative",
-              height: height.get(),
-              display: scrollY.get() < 200 ? "block" : "none",
-            }}
-            id="box_logo_change_color"
-          >
+          <BoxLogo>
             <LogoEU />
-          </Box>
+          </BoxLogo>
         </Link>
-        <Box
-          style={{
-            position: "relative",
-            height: height.get(),
-            display: scrollY.get() < 200 ? "block" : "none",
-          }}
-        >
+        <BoxLogo >
           <LogoBigDash />
-        </Box>
+        </BoxLogo>
         <Link href={'https://ya.ru/'} isExternal>
-          <Box
-            style={{
-              position: "relative",
-              height: height.get(),
-              display: scrollY.get() < 200 ? "block" : "none"
-            }}
-            id="box_logo_change_color"
-          >
+          <BoxLogo>
             <LogoYa />
-          </Box>
+          </BoxLogo>
         </Link>
       </HStack>
     </MotionBox>
