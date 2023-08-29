@@ -194,7 +194,7 @@ const CustomCloseIcon = (props) => (
       r="21.0874"
       fill="rgba(0,0,0,0)"
       stroke="white"
-      stroke-opacity="0.4"
+      strokeOpacity="0.4"
       strokeWidth="2"
     />
     <path
@@ -231,13 +231,13 @@ const BrandDownIcon = (props) => {
       <path
         d="M35 57C35 66.3888 27.3888 74 18 74C8.61116 74 1 66.3888 1 57C1 47.6112 8.61116 40 18 40C27.3888 40 35 47.6112 35 57Z"
         stroke="#A8D4AF"
-        stroke-width="2"
+        strokeWidth="2"
       />
       <path
         d="M17.7142 1.43167V62.2601C17.7142 62.2601 13 48.0405 13 49.6204V52.7804C13 52.7804 17.7142 67 18.5 67C19.2857 67 23.9999 52.7804 23.9999 52.7804V49.6204C24.0244 47.7507 19.2623 64.0379 19.2857 62.2601V1.43167C19.2857 0.85611 17.7142 0.856111 17.7142 1.43167Z"
         fill="#A8D4AF"
         stroke="#A8D4AF"
-        stroke-linecap="round"
+        strokeLinecap="round"
       />
     </Icon>
   );

@@ -19,7 +19,7 @@ const HeaderLogo = ({}) => {
       top={'-16px'}
       justify="start"
       className={isScrolling ? "unviewed" : "viewed"}
-      transform={['scale(0.6)','scale(0.6)','scale(1)']}
+      transform={['scale(0.8)','scale(0.8)','scale(1)']}
     >
       <AnimatedSVG scrollY={scrollY > 300 ? 300 : scrollY} />
     </Flex>

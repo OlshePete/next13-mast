@@ -4,33 +4,28 @@ import { MotionBox } from "../MotionBox";
 import { useEffect } from "react";
 import { LogoBigDash, LogoEU, LogoMast, LogoYa } from "../CustomIcons";
 
-const AnimatedSVG = ({ }) => {
-  const { scrollY } = useScroll()
-  // Определи начальное и к онечное состояния анимации
+const BoxLogo = ({ children, height, display }) => {
+  return (
+    <Box
+      style={{
+        position: "relative",
+        height,
+        display,
+      }}
+      id="box_logo_change_color"
+    >
+      {children}
+    </Box>
+  );
+};
+const AnimatedSVG = ({}) => {
+  const { scrollY } = useScroll();
   const heightSizes = [200, 60];
-  // const initialStyles = { opacity: 0 };
-  // const targetStyles = { opacity: 1 };
   const height = useTransform(scrollY, [0, 320], heightSizes);
-  // Определи анимацию
 
   useEffect(() => {
-    height.set(200 + scrollY)
-  }, [scrollY])
-
-  const BoxLogo = ({ children }) => {
-    return (
-      <Box
-        style={{
-          position: "relative",
-          height: height.get(),
-          display: scrollY.get() < 200 ? "block" : "none",
-        }}
-        id="box_logo_change_color"
-      >
-        {children}
-      </Box>
-    )
-  }
+    height.set(200 + scrollY);
+  }, [scrollY]);
 
   return (
     <MotionBox
@@ -52,21 +47,30 @@ const AnimatedSVG = ({ }) => {
       </Box>
       <HStack
         style={{
-          overflow: 'hidden',
-          alignItems: 'baseline',
-          minHeight: '50px',
+          overflow: "hidden",
+          alignItems: "baseline",
+          minHeight: "50px",
         }}
       >
-        <Link href={'https://eusp.org/'} isExternal >
-          <BoxLogo>
+        <Link href={"https://eusp.org/"} isExternal>
+          <BoxLogo
+            height={height.get()}
+            display={scrollY.get() < 200 ? "block" : "none"}
+          >
             <LogoEU />
           </BoxLogo>
         </Link>
-        <BoxLogo >
+        <BoxLogo
+          height={height.get()}
+          display={scrollY.get() < 200 ? "block" : "none"}
+        >
           <LogoBigDash />
         </BoxLogo>
-        <Link href={'https://ya.ru/'} isExternal>
-          <BoxLogo>
+        <Link href={"https://ya.ru/"} isExternal>
+          <BoxLogo
+            height={height.get()}
+            display={scrollY.get() < 200 ? "block" : "none"}
+          >
             <LogoYa />
           </BoxLogo>
         </Link>
