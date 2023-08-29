@@ -85,7 +85,7 @@ header {
   transform: translate(28.72px, 28.72px);
 }
 
-.menu-btn.position2>#element3 {}
+/* .menu-btn.position2>#element3 {} */
 
 .menu-btn.position3>#element0 {
   transform: translate(0, -28.72px);
@@ -226,6 +226,14 @@ header {
 .main_logo_icon {
   position: absolute;
   animation: scroll_change 2.5s ease-in-out;
+}
+
+#box_logo_change_color:hover #icon_caption_shell {
+    fill: gold;
+}
+
+#box_logo_change_color:hover #icon_caption_letter_ya {
+    fill: red;
 }
 
 .main_logo_icon>#icon_caption {
