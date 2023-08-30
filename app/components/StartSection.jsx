@@ -34,7 +34,7 @@ const StartSection = () => {
         variant="main_header"
         zIndex={200}
         pt={{base:"140px",md:"250px"}}
-        className={scrollY.get() >= 10 ? "unviewed" : ""}
+        className={scrollY.get() >= 10 ? "hide" : "show"}
       >
         Прикладной центр машинного обучения, анализа данных и статистики
       </MotionBox>
