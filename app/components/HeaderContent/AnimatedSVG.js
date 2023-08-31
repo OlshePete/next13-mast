@@ -18,7 +18,7 @@ const BoxLogo = ({ children, height, display }) => {
     </Box>
   );
 };
-const AnimatedSVG = ({}) => {
+const AnimatedSVG = () => {
   const { scrollY } = useScroll();
   const heightSizes = [200, 100];
   const height = useTransform(scrollY, [0, 320], heightSizes);
@@ -27,7 +27,6 @@ const AnimatedSVG = ({}) => {
     height.set(200 + scrollY);
   }, [scrollY]);
 
-  console.log(height.get())
   return (
     <MotionBox
       as={VStack}
@@ -49,7 +48,7 @@ const AnimatedSVG = ({}) => {
       <HStack
         style={{
           overflow: "hidden",
-          alignItems: "baseline",
+          alignItems: "flex-start",
           minHeight: "50px",
         }}
       >

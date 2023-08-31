@@ -13,9 +13,9 @@ const HeaderLogo = () => {
       flex={{ base: 1 }}
       pt={["8px","8px","50px"]}
       position={'relative'}
-      right={[0,'68px',0]}
+      // right={[0,'68px',0]}
       top={'8px'}
-      justify="start"
+      // justify="start"
       className={isScrolling ? "hide" : "show"}
       // transform={['scale(0.8)','scale(1)']}
     >

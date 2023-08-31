@@ -228,12 +228,16 @@ header {
   animation: scroll_change 2.5s ease-in-out;
 }
 
+#box_logo_change_color #icon_caption_shell, #icon_caption_letter_ya {
+  transition: .4s ease-in-out; 
+}
+
 #box_logo_change_color:hover #icon_caption_shell {
-  fill: gold;
+  fill: rgb(253, 198, 19);
 }
 
 #box_logo_change_color:hover #icon_caption_letter_ya {
-  fill: red;
+  fill: #fd3f1d;
 }
 
 .main_logo_icon>#icon_caption {
