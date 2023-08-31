@@ -63,17 +63,14 @@ export const theme = extendTheme({
             color: "brand.900",
           },
         },
-        post_text:{
-          color:'brand.800',
-          textShadow:'0px 4px 4px rgba(255, 255, 255, 0.05)',
-          textAlign:'right',
-          // fontFamily:'Orchidea Pro',
-          fontSize:['22px'],
-          fontStyle:'normal',
-          fontWeight:'400',
-          lineHeight:'135.5%',
-          letterSpacing:'2.64px',
-          maxWidth:'min(400px, 60%)'
+        paragraph: {
+          color: "brand.800",
+          textShadow: "0px 4px 4px rgba(255, 255, 255, 0.05)",
+          fontSize: "18px",
+          fontStyle: "normal",
+          fontWeight: "500",
+          lineHeight: "119.5%",
+          letterSpacing: "2.64px",
         },
       },
     },
@@ -123,20 +120,16 @@ export const theme = extendTheme({
         }
       }
     },
-    IconButton:{
-      variants:{
-        slider_arrow:{
-          color:'brand.900',
-          border:'1px solid #A8D4AF',
-          padding:'25px',
-          textShadow:'0px 4px 4px rgba(255, 255, 255, 0.05)',
-          // fontFamily:'Orchidea Pro',
-          fontSize:['24px'],
-          fontStyle:'normal',
-          fontWeight:'400',
-          lineHeight:'100%',
-          textTransform:'uppercase',
-          maxWidth:'min(320px, 100%)'
+    ListItem: {
+      variants: {
+        regular: {
+          color: "brand.800",
+          textShadow: "0px 4px 4px rgba(255, 255, 255, 0.05)",
+          fontSize: "18px",
+          fontStyle: "normal",
+          fontWeight: "500",
+          lineHeight: "119.5%",
+          letterSpacing: "2.64px",
         }
       }
     }
