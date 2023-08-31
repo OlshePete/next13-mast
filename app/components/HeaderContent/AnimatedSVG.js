@@ -20,13 +20,14 @@ const BoxLogo = ({ children, height, display }) => {
 };
 const AnimatedSVG = ({}) => {
   const { scrollY } = useScroll();
-  const heightSizes = [200, 60];
+  const heightSizes = [200, 100];
   const height = useTransform(scrollY, [0, 320], heightSizes);
 
   useEffect(() => {
     height.set(200 + scrollY);
   }, [scrollY]);
 
+  console.log(height.get())
   return (
     <MotionBox
       as={VStack}

@@ -13,11 +13,11 @@ const HeaderLogo = () => {
       flex={{ base: 1 }}
       pt={["8px","8px","50px"]}
       position={'relative'}
-      right={['28px','68px',0]}
-      top={'-16px'}
+      right={[0,'68px',0]}
+      top={'8px'}
       justify="start"
       className={isScrolling ? "hide" : "show"}
-      transform={['scale(0.8)','scale(0.8)','scale(1)']}
+      // transform={['scale(0.8)','scale(1)']}
     >
       <AnimatedSVG scrollY={scrollY > 300 ? 300 : scrollY} />
     </Flex>

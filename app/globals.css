@@ -145,7 +145,7 @@ header {
   0% {
     transform: translateY(0);
     fill: "url(#gradient1)";
-    opacity: 0.4;
+    opacity: 1;
 
   }
 
@@ -156,7 +156,7 @@ header {
 
   } */
   100% {
-    transform: translateY(28px);
+    transform: translateY(16px);
     fill: "url(#gradient2)";
     opacity: 0;
 
@@ -248,16 +248,16 @@ header {
   transition: all .8s ease;
 }
 
-.icon>path:first-child {
+/* .icon>path:first-child {
   animation: wave1 2.5s infinite;
 }
 
 .icon>path:not(:first-child) {
   animation: wave2 1.5s infinite;
-}
+} */
 
-.icon>path:last-child {
-  animation: wave3 1.5s infinite;
+.icon>path {
+  animation: wave3 2.5s infinite;
 }
 
 
