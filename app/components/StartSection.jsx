@@ -1,49 +1,43 @@
-import { IconButton } from "@chakra-ui/button";
 import { Box, Heading } from "@chakra-ui/layout";
-import Image from "next/image";
 import React from "react";
-import { BrandDownIcon } from "./CustomIcons";
 import { useScroll } from "framer-motion";
 import { MotionBox } from "./MotionBox";
 
 const StartSection = () => {
-  const {scrollY} = useScroll({
-    offset: [0, 200],
-  })
+  const { scrollY } = useScroll();
 
   return (
     <Box
       className="section dark"
-      display='flex'
-      flexDirection='column'
-      // position='relative'
+      id="start"
+      display="flex"
+      flexDirection="column"
+      justifyContent={'flex-start'}
+      minH={`calc(100vh - ${250}px)!important`}
+      maxH={`calc(100vh - ${350}px)!important`}
     >
       <Box
         position="absolute"
         className="start_cover_image"
         top={0}
+        zIndex={100}
         right={0}
-        pt={5}
-        w="50vw"
+        w={['100vw','100vw','100vw',"50vw"]}
         h="100vh"
-        bg="linear-gradient(135deg, rgba(34, 53, 111, 0.6), rgba(34, 53, 111, 0.6)),linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url('/start-image.png') center/cover"     
+        bg="linear-gradient(135deg, rgba(34, 53, 111, 0.6), rgba(34, 53, 111, 0.6)),linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url('/start-image.png') center/cover"
         bgSize="cover"
         bgPosition="center"
         bgRepeat="no-repeat"
       />
-      <MotionBox as={Heading} variant="main_header" size='2xl'pt={'120px'} className={scrollY.get()>=50?'unviewed':''} >Прикладной центр машинного обучения, анализа данных и статистики</MotionBox>
-      <IconButton
-      as='a'
-        href='#products'
-        variant="no_bg"
-        aria-label='Scroll down'
-        position='absolute' 
-        transition={"all 2s ease-in-out"}
-        top={'calc(100vh - 120px)'}
-        icon={<BrandDownIcon />}
-        className={scrollY.get()>=100?'unviewed':''}
-        />
-      {/* <hr class="colored"></hr> */}
+      <MotionBox
+        as={Heading}
+        variant="main_header"
+        zIndex={200}
+        pt={{base:"140px",md:"250px"}}
+        className={scrollY.get() >= 10 ? "hide" : "show"}
+      >
+        Прикладной центр машинного обучения, анализа данных и статистики
+      </MotionBox>
     </Box>
   );
 };

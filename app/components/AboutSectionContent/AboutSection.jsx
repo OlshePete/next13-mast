@@ -4,8 +4,12 @@ import EmployeeBlock from '../AboutSectionContent/EmployeeBlock'
 
 const AboutSection = () => {
   return (
-    <Box className='section'>
-      <Heading as="h2" size="2xl" py={20} ml={40}>
+    <Box className='section dark'>
+      <Heading
+        variant="sub_header"
+        py={20}
+        ml={40}
+      >
         О ЦЕНТРЕ
       </Heading>
       <Flex flexDirection="row" justifyContent="space-around" >
@@ -30,7 +34,7 @@ const AboutSection = () => {
         </Box>
       </Flex>
       <Box ml={40}>
-        <Heading as="h2" size="2xl" py={20} >
+        <Heading variant="sub_header" py={20} >
           Основные направления
         </Heading>
         <UnorderedList fontSize='2xl' spacing={5} maxW={'5xl'}>

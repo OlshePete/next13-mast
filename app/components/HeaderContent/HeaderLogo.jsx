@@ -1,17 +1,27 @@
 "use client";
-import { Flex } from '@chakra-ui/react'
-import React from 'react'
-import { HeaderLogoIcon } from "../CustomIcons";
+import { Flex } from "@chakra-ui/react";
+import React from "react";
 import { AnimatedSVG } from "../../components/HeaderContent/AnimatedSVG";
+import { useScrollTracker } from "../useScrollTracker";
+import { useScroll } from "framer-motion";
+const HeaderLogo = () => {
+  const { scrollY } = useScroll();
 
-const HeaderLogo = ({scrollY}) => {
-  console.log(scrollY)
+  const isScrolling = useScrollTracker();
   return (
-      
-    <Flex flex={{ base: 1 }} pt={'50px'} justify={{ base: "center", md: "start" }} >
-      <AnimatedSVG scrollY={scrollY>300?300:scrollY}/>
+    <Flex
+      flex={{ base: 1 }}
+      pt={["8px","8px","50px"]}
+      position={'relative'}
+      // right={[0,'68px',0]}
+      top={'8px'}
+      // justify="start"
+      className={isScrolling ? "hide" : "show"}
+      // transform={['scale(0.8)','scale(1)']}
+    >
+      <AnimatedSVG scrollY={scrollY > 300 ? 300 : scrollY} />
     </Flex>
-  )
-}
+  );
+};
 
-export {HeaderLogo}
+export { HeaderLogo };

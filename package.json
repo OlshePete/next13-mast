@@ -16,6 +16,7 @@
     "@emotion/styled": "^11.11.0",
     "@fontsource/open-sans": "^5.0.8",
     "@fontsource/raleway": "^5.0.8",
+    "@fontsource/spectral": "^5.0.8",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.13",
     "framer-motion": "^10.15.1",

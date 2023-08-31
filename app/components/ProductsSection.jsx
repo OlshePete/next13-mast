@@ -1,10 +1,11 @@
 import React from 'react'
 import { ProductContent } from "./ProductPageContent/ProductContent";
+import { Box } from '@chakra-ui/react';
 const ProductsSection = () => {
   return (
-    <div className='section dark' id="products">
+    <Box pt={['120px']} className='section dark' id="products" overflowX={'hidden'}>
       <ProductContent/>
-      </div>
+      </Box>
   )
 }
 

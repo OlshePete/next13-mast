@@ -2,8 +2,8 @@ import React from 'react'
 
 const ResearchesSection = () => {
   return (
-    <div className='section dark'>
-      <h1 id="researches">
+    <div className='section dark'  id="researches">
+      <h1>
 
       ИССЛЕДОВАНИЯ
       </h1>

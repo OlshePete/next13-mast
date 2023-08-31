@@ -15,7 +15,7 @@ const ContactsSection = () => {
   };
   return (
     <Box ml={40} mb={40}>
-      <Heading as="h2" size="2xl" py={20} >
+      <Heading variant="sub_header" py={20} >
         Контакты
       </Heading>
       <Text py={10} fontSize={'2xl'} color={'white'}>Санкт-Петербург, наб. Кутузова, 22, к. 31</Text>

@@ -4,12 +4,12 @@ import React from 'react'
 import {HeaderLogo} from './HeaderLogo'
 import {HeaderMenuIcon} from './HeaderMenuIcon'
 import {MenuDrawer} from './MenuDrawer'
-function HeaderContent({scrollY}) {
+
+function HeaderContent() {
   const { isOpen, onToggle } = useDisclosure();
-console.log("scrollY",scrollY)
   return (
-    <Box height={200-scrollY+'px'} flexGrow={1}>
-    <HeaderLogo scrollY={scrollY}/>
+    <Box flexGrow={1} display={'flex'} justifyContent={'space-between'}>
+    <HeaderLogo />
     <HeaderMenuIcon isOpen={isOpen} onToggle={onToggle}/>
     <MenuDrawer  isOpen={isOpen} onToggle={onToggle}/>
     </Box>

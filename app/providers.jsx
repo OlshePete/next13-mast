@@ -7,15 +7,26 @@ const colors = {
   brand: {
     900: "#A8D4AF",
     800: "#fff",
-    700: "#2a69ac",
+    700: "#22356f",
   },
 };
 
 export const theme = extendTheme({
   colors,
   fonts: {
-    heading: `'Open Sans', sans-serif`,
-    body: `'Raleway', sans-serif`,
+    heading: `'Spectral'`,
+    text:`'Spectral'`,
+    body: `'Spectral'`,
+  },
+  styles:{
+    global:{
+      header: {
+        padding:['8px','16px','0 50px']
+      },
+      '.section':{
+        padding:['8px','16px','0 50px']
+      },
+    }
   },
   components: {
     Text: {
@@ -24,7 +35,7 @@ export const theme = extendTheme({
           color: "#FFF",
           cursor: "pointer",
           textShadow: "0px 4px 4px rgba(255, 255, 255, 0.05)",
-          fontFamily: "Orchidea Pro",
+          // fontFamily: "Orchidea Pro",
           fontSize: "44px",
           fontStyle: "normal",
           fontWeight: "600",
@@ -37,10 +48,10 @@ export const theme = extendTheme({
           },
         },
         products_link: {
-          color: "#FFF",
+            color: "brand.800",
           cursor: "pointer",
           textShadow: "0px 4px 4px rgba(255, 255, 255, 0.05)",
-          fontFamily: "Orchidea Pro",
+          // fontFamily: "Orchidea Pro",
           fontSize: "32px",
           fontStyle: "normal",
           fontWeight: "400",
@@ -59,12 +70,24 @@ export const theme = extendTheme({
         main_header:{
           color:'brand.800',
           textShadow:'0px 4px 4px rgba(255, 255, 255, 0.05)',
-          fontFamily:'Orchidea Pro',
-          fontSize:'44px',
+          // fontFamily:'Orchidea Pro',
+          fontSize:['32px','36px','44px'],
           fontStyle:'normal',
-          fontWeight:'300',
+          fontWeight:'200',
           lineHeight:'119.5%',
-          letterSpacing:'6%',
+          letterSpacing:'2.64px',
+          textTransform:'uppercase',
+          maxWidth:'min(620px, 100%)'
+        },
+        sub_header:{
+          color:'brand.800',
+          textShadow:'0px 4px 4px rgba(255, 255, 255, 0.05)',
+          // fontFamily:'Orchidea Pro',
+          fontSize:['26px','32px','38px'],
+          fontStyle:'normal',
+          fontWeight:'200',
+          lineHeight:'119.5%',
+          letterSpacing:'2.64px',
           textTransform:'uppercase',
           maxWidth:'min(620px, 100%)'
         }

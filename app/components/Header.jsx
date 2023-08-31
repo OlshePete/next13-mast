@@ -1,9 +1,9 @@
 import React from 'react';
 import { HeaderContent } from './HeaderContent/HeaderContent';
-export default function Header({scrollY}) {
+export default function Header() {
   return (
     <header>
-      <HeaderContent scrollY={scrollY}/>
+      <HeaderContent/>
     </header>
   );
 }
