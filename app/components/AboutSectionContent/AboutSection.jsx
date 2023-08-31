@@ -8,11 +8,11 @@ const AboutSection = () => {
       <Heading
         variant="sub_header"
         py={20}
-        ml={40}
+
       >
         О ЦЕНТРЕ
       </Heading>
-      <Flex flexDirection="row" justifyContent="space-around" >
+      {/* <Flex flexDirection="row" justifyContent="space-around" >
         <Box maxW="sm" overflow="hidden" textAlign={'center'}>
           <Image src="/bibilov.jpg" alt={'test'} boxShadow="md" />
           <Box p="6">
@@ -32,12 +32,21 @@ const AboutSection = () => {
             Мы применяем методы машинного обучения и анализа данных в гуманитарных и социальных науках.
           </Text>
         </Box>
-      </Flex>
-      <Box ml={40}>
+      </Flex> */}
+      <Box mb="50px">
         <Heading variant="sub_header" py={20} >
           Основные направления
         </Heading>
-        <UnorderedList fontSize='2xl' spacing={5} maxW={'5xl'}>
+        <UnorderedList
+          spacing={5}
+          style={{
+            color: "#fff",
+            fontSize: "18px",
+            textShadow: "0px 4px 4px rgba(255, 255, 255, 0.05)",
+            lineHeight: "119.5%",
+            letterSpacing: "2px",
+          }}
+        >
           <ListItem>разработка: прикладные инструменты, библиотеки и базы данных для исследователей в социогуманитарных областях</ListItem>
           <ListItem>образование: экспертное сопровождение студентов программы ПАНДАН, обеспечение практик для студентов технических специальностей из Computer Science Center, СПБГУ, ВШЭ и ИТМО</ListItem>
           <ListItem>исследования в областях обработки естественного языка и компьютерного зрения</ListItem>

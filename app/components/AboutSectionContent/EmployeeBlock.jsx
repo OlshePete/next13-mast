@@ -1,31 +1,55 @@
 import { useState } from "react";
-import { Box, Text, Image, Flex, Heading } from "@chakra-ui/react";
+import { Box, Text, Image, Heading, HStack } from "@chakra-ui/react";
+const employees = [
+    {
+        id: 1,
+        name: "Бибилов Иван",
+        position: "директор",
+        photoUrl: '/bibilov.jpg'
+    },
+    {
+        id: 2,
+        name: "Калишенко Анна",
+        position: "менеджер проектов",
+        photoUrl: '/kalishenko.jpg'
+    },
+    {
+        id: 3,
+        name: "Коваленко Кира",
+        position: "начный сотрудник",
+        photoUrl: '/kovalenko.jpg'
+    },
+    {
+        id: 4,
+        name: "Лавров Дмитрий",
+        position: "программист",
+        photoUrl: '/lavrov.jpg'
+    },
+    {
+        id: 5,
+        name: "Ольшевский Петр",
+        position: "старший программист",
+        photoUrl: '/olshevskii.jpg'
+    },
+    {
+        id: 6,
+        name: "Рогозов Михаил",
+        position: "старший программист",
+        photoUrl: '/rogozov.jpg'
+    },
+    {
+        id: 7,
+        name: "Шкода Мария",
+        position: "менеджер по развитию",
+        photoUrl: '/shkoda.jpg'
+    },
+]
+const exEmployees = [
+    'Аматуни Юлия',
+    'Петров Андрей',
+    'Усалко Иван',
+]
 const EmployeeBlock = () => {
-    const employees = [
-        {
-            id: 1,
-            name: "Кира Коваленко",
-            position: "начный сотрудник",
-            photoUrl: '/kovalenko.jpg'
-        },
-        {
-            id: 2,
-            name: "Петр Ольшевский",
-            position: "старший программист",
-            photoUrl: '/olshevskii.jpg'
-        },
-        {
-            id: 3,
-            name: "Михаил Рогозов",
-            position: "старший программист",
-            photoUrl: '/rogozov.jpg'
-        },
-    ]
-    const exEmployees = [
-        'Аматуни Юлия',
-        'Усалко Иван',
-        'Петров Андрей',
-    ]
     const [selectedEmployee, setSelectedEmployee] = useState({
         id: 1,
         name: "Кира",
@@ -37,10 +61,10 @@ const EmployeeBlock = () => {
     };
     return (
         <>
-            <Heading variant="sub_header" py={20} ml={40}>
+            <Heading variant="sub_header" py={20} >
                 Сотрудники центра
             </Heading>
-            <Flex flexDirection="row" justifyContent="space-around">
+            <HStack justify="space-between" align="flex-start">
                 <Box>
                     {employees.map((employee) => (
                         <Box py={3}>
@@ -49,11 +73,13 @@ const EmployeeBlock = () => {
                                 onClick={() => handleEmployeeClick(employee)}
                                 cursor="pointer"
                                 fontWeight={selectedEmployee.id === employee.id ? "bold" : "normal"}
-                                fontSize={'2xl'}
+                                color={selectedEmployee.id === employee.id ? "#A8D4AF" : "#fff"}
+                                variant="paragraph"
+                                fontSize="22px"
                             >
                                 {employee.name}
                             </Text>
-                            <Text>
+                            <Text variant="paragraph" fontSize="15px">
                                 {employee.position}
                             </Text>
                         </Box>
@@ -63,28 +89,26 @@ const EmployeeBlock = () => {
                     <Box maxW="sm" overflow="hidden" textAlign={'center'}>
                         <Image src={selectedEmployee.photoUrl} alt={selectedEmployee.name} boxShadow="md" />
                         <Box p="6">
-                            <Text fontWeight="bold" fontSize="xl" mb="2">
+                            <Text variant="paragraph" mb="2">
                                 Описание
                             </Text>
                         </Box>
                     </Box>
                 )}
-            </Flex>
-            <Heading as="h2" size="md" py={10} ml={40} >
+            </HStack>
+            <Text as="span" variant="paragraph"  >
                 В работе центра принимали участие
-            </Heading>
-            <Box ml={40} pb={20}>
-                {exEmployees.map((exEmployee, index) => (
-                    <Text
-                        key={index}
-                        fontSize={'md'}
-                        py='1'
-                    >
-                        {exEmployee}
-                    </Text>
+            </Text>
+            {exEmployees.map((exEmployee, index) => (
+                <Text
+                    as="span"
+                    variant="paragraph"
+                    key={index}
+                >
+                    {index !== 0 && ','} {exEmployee}
+                </Text>
 
-                ))}
-            </Box>
+            ))}
         </>
     );
 };
