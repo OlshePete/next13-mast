@@ -1,7 +1,7 @@
 "use client";
 import { Box, Flex, List, ListItem, Text } from "@chakra-ui/react";
 import React from "react";
-
+import { ProductBlock } from "./ProductBlock";
 const PROD_ITEMS_LIST = [
   {
     name: "исследования",
@@ -19,6 +19,7 @@ const PROD_ITEMS_LIST = [
     href: "block-developing",
   },
 ];
+
 function ProductContent() {
   function handleScrollToBlock(blockId) {
     document
@@ -34,7 +35,8 @@ function ProductContent() {
         alignItems={"center"}
         position={"sticky"}
         top={"50px"}
-        display={['none','flex']}
+        display={['none','none','flex']}
+        direction={['column','column','row']}
       >
         <List spacing={6}>
           {PROD_ITEMS_LIST.map((item, index) => (
@@ -55,37 +57,24 @@ function ProductContent() {
       </Flex>
       <Flex
         direction={"column"}
-        gap={8}
+        gap={10}
         position={"sticky"}
         top={"50px"}
         flexGrow={10}
-        bg="rgba(0,0,0,0)"
+        align={'center'}
+        // bg="rgba(0,0,0,0)"
         p={{base:"250px 0",md:"150px 60px"}}
       >
-        {PROD_ITEMS_LIST.map((item, index) => (
-          <Box
-            bg="rgba(0,0,0,0)"
-            border={"3px solid white"}
-            zIndex={1000 - index}
-            position={"sticky"}
-            top={"50px"}
-            key={"block " + item.name + index}
-            minH={"80vh"}
-            id={item.href}
-          >
-            <Text
-              key={item.name}
-              color={"brand.800"}
-              bg={"brand.700"}
-              textTransform={"uppercase"}
-            >
-              {item.name}
-            </Text>
-          </Box>
-        ))}
+        {PROD_ITEMS_LIST.map((item, index) =>
+        <ProductBlock
+          index={index}
+          item={item}
+          key={"block " + item.name + index}
+        />)}
       </Flex>
     </Flex>
   );
+
 }
 
 export { ProductContent };

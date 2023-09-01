@@ -7,6 +7,15 @@
 
 body {
   background-color: #22356f !important;
+
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
 .menu-btn>* {

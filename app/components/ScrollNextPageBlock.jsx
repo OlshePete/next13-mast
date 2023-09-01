@@ -27,8 +27,8 @@ function ScrollNextPageBlock() {
       position="fixed"
       transition={"all 2s ease-in-out"}
       transform={["scale(0.8)", "scale(0.8)", "scale(1)"]}
-      top={"calc(100vh - 80px)"}
-      right={["8px", "16px", "50px"]}
+      top={"calc(100vh - 90px)"}
+      left={["8px", "16px", "24px"]}
       zIndex={200}
       icon={<BrandDownIcon />}
       _hover={{
