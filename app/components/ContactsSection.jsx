@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Box, Text, Heading, Tooltip, Wrap, VStack } from "@chakra-ui/react";
+import { Box, Text, Heading, Tooltip, Wrap, VStack, Button, Link } from "@chakra-ui/react";
 const ContactsSection = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -32,12 +32,44 @@ const ContactsSection = () => {
       <VStack spacing="45px" align={'start'} >
         <Text variant="paragraph">Санкт-Петербург, наб. Кутузова, 22, каб. 31</Text>
         <Text variant="paragraph">+7 (812) 386-76-61</Text>
-        <Tooltip label="email скопирован" placement="top"
+        <Tooltip
+          label="email скопирован"
+          placement="top"
           isOpen={isOpen}>
-          <Text width="fit-content" variant="paragraph" cursor="pointer" onClick={() => handleClick("ruscan@eu.spb.ru")}>ruscan@eu.spb.ru</Text>
+          <Button
+            p={0}
+            style={{
+              m: 0,
+              width: "fit-content",
+              height: "0",
+            }}
+            onClick={() => handleClick("ruscan@eu.spb.ru")}
+            _before={{
+              content: `""`,
+              position: "absolute",
+              bottom: '-17px',
+              left: '0',
+              width: '100%',
+              height: '1px',
+              transform: 'scaleX(0)',
+              background: 'brand.900',
+              transformOrigin: 'right',
+              transition: "transform 0.3s ease-in-out",
+            }}
+            _hover={{
+              _before: {
+                transform: 'scale(1)',
+                transformOrigin: 'left',
+              },
+            }}
+          >
+            <Text variant="paragraph" p={0} m={0}>
+              ruscan@eu.spb.ru
+            </Text>
+          </Button>
         </Tooltip>
       </VStack>
-    </Box>
+    </Box >
   );
 };
 export { ContactsSection };

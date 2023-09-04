@@ -52,9 +52,10 @@ const exEmployees = [
 const EmployeeBlock = () => {
     const [selectedEmployee, setSelectedEmployee] = useState({
         id: 1,
-        name: "Кира",
-        photoUrl: '/kovalenko.jpg'
-    });
+        name: "Бибилов Иван",
+        position: "директор",
+        photoUrl: '/bibilov.jpg'
+    },);
 
     const handleEmployeeClick = (employee) => {
         setSelectedEmployee(employee);
