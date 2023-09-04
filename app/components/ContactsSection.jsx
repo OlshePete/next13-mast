@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Box, Text, Heading, Tooltip, Wrap, VStack, Button, Link } from "@chakra-ui/react";
+import { Box, Text, Heading, Tooltip, VStack, Button } from "@chakra-ui/react";
 const ContactsSection = () => {
   const [isOpen, setIsOpen] = useState(false);
 
