@@ -44,6 +44,37 @@ const employees = [
         photoUrl: '/shkoda.jpg'
     },
 ]
+
+const employee_photos = [
+    {
+        id: 1,
+        url: '/bibilov.jpg'
+    },
+    {
+        id: 2,
+        url: '/kalishenko.jpg'
+    },
+    {
+        id: 3,
+        url: '/kovalenko.jpg'
+    },
+    {
+        id: 4,
+        url: '/lavrov.jpg'
+    },
+    {
+        id: 5,
+        url: '/olshevskii.jpg'
+    },
+    {
+        id: 6,
+        url: '/rogozov.jpg'
+    },
+    {
+        id: 7,
+        url: '/shkoda.jpg'
+    },
+]
 const exEmployees = [
     'Аматуни Юлия',
     'Петров Андрей',
@@ -66,9 +97,9 @@ const EmployeeBlock = () => {
                 Сотрудники центра
             </Heading>
             <HStack justify="space-between" align="flex-start" px={20}>
-                <Box >
+                <Box zIndex={1000}>
                     {employees.map((employee) => (
-                        <Box py={3} key={employee.id}>
+                        <Box py={3} key={employee.id} >
                             <Text
                                 onClick={() => handleEmployeeClick(employee)}
                                 cursor="pointer"
@@ -85,32 +116,36 @@ const EmployeeBlock = () => {
                         </Box>
                     ))}
                 </Box>
-                {selectedEmployee && (
-                    <Box maxW="sm" overflow="hidden" textAlign={'center'}>
-                        <Image src={selectedEmployee.photoUrl} alt={selectedEmployee.name} boxShadow="md" />
+                {employee_photos.map((photo) => (
+                    <Box
+                        key={photo.id}
+                        maxW="sm"
+                        textAlign={'center'}
+                        className={photo.id === selectedEmployee.id ? 'fade-in' : 'fade-out'}
+                    >
+                        <Image src={photo.url} alt={photo.id} boxShadow="md" />
                         <Box p="6">
                             <Text variant="paragraph" mb="2">
                                 Описание
                             </Text>
                         </Box>
                     </Box>
-                )}
+                ))}
             </HStack>
             <Box px={20} >
-
-            <Text as="span" variant="paragraph"  >
-                В работе центра принимали участие
-            </Text>
-            {exEmployees.map((exEmployee, index) => (
-                <Text
-                    as="span"
-                    variant="paragraph"
-                    key={index}
-                >
-                    {index !== 0 && ','} {exEmployee}
+                <Text as="span" variant="paragraph"  >
+                    В работе центра принимали участие
                 </Text>
+                {exEmployees.map((exEmployee, index) => (
+                    <Text
+                        as="span"
+                        variant="paragraph"
+                        key={index}
+                    >
+                        {index !== 0 && ','} {exEmployee}
+                    </Text>
 
-            ))}
+                ))}
             </Box>
         </>
     );
