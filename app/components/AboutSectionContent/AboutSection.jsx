@@ -38,6 +38,7 @@ const AboutSection = () => {
           Основные направления
         </Heading>
         <UnorderedList
+         px={20}
           spacing={5}
           style={{
             color: "#fff",

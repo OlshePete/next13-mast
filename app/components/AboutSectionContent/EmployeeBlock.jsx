@@ -65,12 +65,11 @@ const EmployeeBlock = () => {
             <Heading variant="sub_header" py={20} >
                 Сотрудники центра
             </Heading>
-            <HStack justify="space-between" align="flex-start">
-                <Box>
+            <HStack justify="space-between" align="flex-start" px={20}>
+                <Box >
                     {employees.map((employee) => (
-                        <Box py={3}>
+                        <Box py={3} key={employee.id}>
                             <Text
-                                key={employee.id}
                                 onClick={() => handleEmployeeClick(employee)}
                                 cursor="pointer"
                                 fontWeight={selectedEmployee.id === employee.id ? "bold" : "normal"}
@@ -97,6 +96,8 @@ const EmployeeBlock = () => {
                     </Box>
                 )}
             </HStack>
+            <Box px={20} >
+
             <Text as="span" variant="paragraph"  >
                 В работе центра принимали участие
             </Text>
@@ -110,6 +111,7 @@ const EmployeeBlock = () => {
                 </Text>
 
             ))}
+            </Box>
         </>
     );
 };

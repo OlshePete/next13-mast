@@ -29,7 +29,7 @@ const ContactsSection = () => {
       <Heading variant="sub_header" py={20} >
         Контакты
       </Heading>
-      <VStack spacing="45px" align={'start'} >
+      <VStack spacing="45px" align={'start'}  px={20}  pt={20}>
         <Text variant="paragraph">Санкт-Петербург, наб. Кутузова, 22, каб. 31</Text>
         <Text variant="paragraph">+7 (812) 386-76-61</Text>
         <Tooltip
