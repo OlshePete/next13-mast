@@ -142,19 +142,6 @@ export const theme = extendTheme({
         }
       }
     }
-    ListItem: {
-      variants: {
-        regular: {
-          color: "brand.800",
-          textShadow: "0px 4px 4px rgba(255, 255, 255, 0.05)",
-          fontSize: "18px",
-          fontStyle: "normal",
-          fontWeight: "500",
-          lineHeight: "119.5%",
-          letterSpacing: "2.64px",
-        }
-      }
-    }
   },
 });
 export function Providers({ 
