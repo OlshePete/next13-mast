@@ -2,13 +2,19 @@ import React from 'react';
 import { Box, Heading, Text, Button, UnorderedList, ListItem, Image, Flex } from "@chakra-ui/react";
 import EmployeeBlock from '../AboutSectionContent/EmployeeBlock'
 
+const main_directions = [
+  'разработка: прикладные инструменты, библиотеки и базы данных для исследователей в социогуманитарных областях',
+  'образование: экспертное сопровождение студентов программы ПАНДАН, обеспечение практик для студентов технических специальностей из Computer Science Center, СПБГУ, ВШЭ и ИТМО',
+  'исследования в областях обработки естественного языка и компьютерного зрения',
+  'организация открытых мероприятий о цифровизации в социогуманитарных областях: лекций, семинаров, конференций, школ и хакатонов',
+]
+
 const AboutSection = () => {
   return (
     <Box className='section dark'>
       <Heading
         variant="sub_header"
         py={20}
-
       >
         О ЦЕНТРЕ
       </Heading>
@@ -38,7 +44,7 @@ const AboutSection = () => {
           Основные направления
         </Heading>
         <UnorderedList
-         px={20}
+          px={20}
           spacing={5}
           style={{
             color: "#fff",
@@ -48,10 +54,9 @@ const AboutSection = () => {
             letterSpacing: "2px",
           }}
         >
-          <ListItem>разработка: прикладные инструменты, библиотеки и базы данных для исследователей в социогуманитарных областях</ListItem>
-          <ListItem>образование: экспертное сопровождение студентов программы ПАНДАН, обеспечение практик для студентов технических специальностей из Computer Science Center, СПБГУ, ВШЭ и ИТМО</ListItem>
-          <ListItem>исследования в областях обработки естественного языка и компьютерного зрения</ListItem>
-          <ListItem>организация открытых мероприятий о цифровизации в социогуманитарных областях: лекций, семинаров, конференций, школ и хакатонов</ListItem>
+          {main_directions.map((direction, index) => (
+            <ListItem key={index}>{direction}</ListItem>
+          ))}
         </UnorderedList>
       </Box>
       <EmployeeBlock />

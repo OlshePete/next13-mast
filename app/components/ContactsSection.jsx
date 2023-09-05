@@ -63,7 +63,7 @@ const ContactsSection = () => {
               },
             }}
           >
-            <Text variant="paragraph" p={0} m={0}>
+            <Text variant="paragraph">
               ruscan@eu.spb.ru
             </Text>
           </Button>
