@@ -260,6 +260,8 @@ const BrandDownIcon = ({ props }) => {
       className="icon"
       transition="transform 0.5s"
       {...props}
+      border={'3px solid #A8D4AF'}
+      borderRadius={'100%'}
       // transition={"all  .2s ease-in-out"}
       // _active={{
       //   opacity: 0,
@@ -268,8 +270,9 @@ const BrandDownIcon = ({ props }) => {
       transform={"scale(1.2)"}
       fill={"rgba(0,0,0,0)"}
       _hover={{
+        animation:"none",
         cursor: "pointer",
-        transform: "scale(1.4)",
+        transform: "scale(1.1)",
         stroke: "brand.900",
         // fill: "brand.900!important",
       }}
