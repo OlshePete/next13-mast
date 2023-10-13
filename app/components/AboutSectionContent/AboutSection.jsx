@@ -15,6 +15,7 @@ const AboutSection = () => {
       <Heading
         variant="sub_header"
         py={20}
+        zIndex={1100}
       >
         О ЦЕНТРЕ
       </Heading>
@@ -40,7 +41,7 @@ const AboutSection = () => {
         </Box>
       </Flex> */}
       <Box mb="50px">
-        <Heading variant="sub_header" py={20} >
+        <Heading  variant="sub_header" position={'relative'}  zIndex={20000}py={20} >
           Основные направления
         </Heading>
         <UnorderedList

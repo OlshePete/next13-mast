@@ -38,7 +38,7 @@ const AnimatedSVG = () => {
     >
       <Box
         style={{
-          width: "70%",
+          width: "50%",
           position: "relative",
           height: height.get(),
         }}

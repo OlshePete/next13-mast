@@ -20,7 +20,7 @@ function HeaderMenuIcon({ isOpen, onToggle }) {
       justify={"flex-end"}
       direction={"row"}
       spacing={6}
-      pt={{base:'18px',md:'50px'}}
+      pt={{base:'18px',md:'28px'}}
       onClick={handleMenuClick}
       transform={['scale(0.8)','scale(0.8)','scale(1)']}
     >

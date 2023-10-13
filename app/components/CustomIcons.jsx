@@ -4,6 +4,7 @@ const MenuIcon = (props) => (
     viewBox="0 0 54 54"
     width={"54px"}
     height={"54px"}
+    transform={'scale(.8)'}
     {...props}
     cursor={"pointer"}
     className={"menu-btn" + " " + props.className}
@@ -267,12 +268,11 @@ const BrandDownIcon = ({ props }) => {
       //   opacity: 0,
       // }}
       cursor="pointer"
-      transform={"scale(1.2)"}
       fill={"rgba(0,0,0,0)"}
       _hover={{
         animation:"none",
         cursor: "pointer",
-        transform: "scale(1.1)",
+        transform: "scale(1)",
         stroke: "brand.900",
         // fill: "brand.900!important",
       }}

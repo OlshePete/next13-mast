@@ -52,6 +52,7 @@ export const theme = extendTheme({
           cursor: "pointer",
           textShadow: "0px 4px 4px rgba(255, 255, 255, 0.05)",
           // fontFamily: "Orchidea Pro",
+          position:'relative',
           fontSize: "32px",
           fontStyle: "normal",
           fontWeight: "400",
@@ -69,6 +70,14 @@ export const theme = extendTheme({
           fontSize: "18px",
           fontStyle: "normal",
           fontWeight: "500",
+          lineHeight: "119.5%",
+          letterSpacing: "2.64px",
+        },
+        post_text: {
+          color: "lightgrey",
+          fontSize: "18px",
+          fontStyle: "normal",
+          fontWeight: "300",
           lineHeight: "119.5%",
           letterSpacing: "2.64px",
         }
@@ -91,6 +100,7 @@ export const theme = extendTheme({
         sub_header:{
           color:'brand.800',
           textShadow:'0px 4px 4px rgba(255, 255, 255, 0.05)',
+          backdropFilter: 'blur(2px)',
           // fontFamily:'Orchidea Pro',
           fontSize:['34px'],
           fontStyle:'normal',

@@ -5,76 +5,53 @@ const employees = [
         id: 1,
         name: "Бибилов Иван",
         position: "директор",
+        description:'текст описания ',
         photoUrl: '/bibilov.jpg'
     },
     {
         id: 2,
         name: "Калишенко Анна",
         position: "менеджер проектов",
+        description:'текст описания ',
         photoUrl: '/kalishenko.jpg'
     },
     {
         id: 3,
         name: "Коваленко Кира",
         position: "начный сотрудник",
+        description:'текст описания ',
         photoUrl: '/kovalenko.jpg'
     },
     {
         id: 4,
         name: "Лавров Дмитрий",
         position: "программист",
+        description:'текст описания ',
         photoUrl: '/lavrov.jpg'
     },
     {
         id: 5,
         name: "Ольшевский Петр",
         position: "старший программист",
+        description:'текст описания ',
         photoUrl: '/olshevskii.jpg'
     },
     {
         id: 6,
         name: "Рогозов Михаил",
         position: "старший программист",
+        description:'текст описания ',
         photoUrl: '/rogozov.jpg'
     },
     {
         id: 7,
         name: "Шкода Мария",
         position: "менеджер по развитию",
+        description:'текст описания ',
         photoUrl: '/shkoda.jpg'
     },
 ]
 
-const employee_photos = [
-    {
-        id: 1,
-        url: '/bibilov.jpg'
-    },
-    {
-        id: 2,
-        url: '/kalishenko.jpg'
-    },
-    {
-        id: 3,
-        url: '/kovalenko.jpg'
-    },
-    {
-        id: 4,
-        url: '/lavrov.jpg'
-    },
-    {
-        id: 5,
-        url: '/olshevskii.jpg'
-    },
-    {
-        id: 6,
-        url: '/rogozov.jpg'
-    },
-    {
-        id: 7,
-        url: '/shkoda.jpg'
-    },
-]
 const exEmployees = [
     'Аматуни Юлия',
     'Петров Андрей',
@@ -93,7 +70,7 @@ const EmployeeBlock = () => {
     };
     return (
         <>
-            <Heading variant="sub_header" py={20} >
+            <Heading  variant="sub_header" position={'relative'}  zIndex={20000}py={20} >
                 Сотрудники центра
             </Heading>
             <HStack justify="space-between" align="flex-start" px={20}>
@@ -116,17 +93,17 @@ const EmployeeBlock = () => {
                         </Box>
                     ))}
                 </Box>
-                {employee_photos.map((photo) => (
+                {employees.map((empl) => (
                     <Box
-                        key={photo.id}
+                        key={empl.id}
                         maxW="sm"
                         textAlign={'center'}
-                        className={photo.id === selectedEmployee.id ? 'fade-in' : 'fade-out'}
+                        className={empl.id === selectedEmployee.id ? 'fade-in' : 'fade-out'}
                     >
-                        <Image src={photo.url} alt={photo.id} boxShadow="md" />
+                        <Image src={empl.photoUrl} alt={empl.name} boxShadow="md" />
                         <Box p="6">
                             <Text variant="paragraph" mb="2">
-                                Описание
+                                {empl.description}
                             </Text>
                         </Box>
                     </Box>
@@ -134,18 +111,14 @@ const EmployeeBlock = () => {
             </HStack>
             <Box px={20} >
                 <Text as="span" variant="paragraph"  >
-                    В работе центра принимали участие
+                    В работе центра принимали участие {" "}
                 </Text>
-                {exEmployees.map((exEmployee, index) => (
                     <Text
                         as="span"
                         variant="paragraph"
-                        key={index}
                     >
-                        {index !== 0 && ','} {exEmployee}
+                       {exEmployees.join(", ")}
                     </Text>
-
-                ))}
             </Box>
         </>
     );

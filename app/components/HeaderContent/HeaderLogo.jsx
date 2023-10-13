@@ -11,7 +11,7 @@ const HeaderLogo = () => {
   return (
     <Flex
       flex={{ base: 1 }}
-      pt={["8px","8px","50px"]}
+      pt={["8px","8px","12px"]}
       position={'relative'}
       // right={[0,'68px',0]}
       top={'8px'}

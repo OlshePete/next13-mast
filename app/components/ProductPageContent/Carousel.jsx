@@ -17,7 +17,7 @@ import {
 // And react-slick as our Carousel Lib
 import Slider from "react-slick";
 import Link from "next/link";
-import { BrandNavLeftIcon, BrandNavRightIcon } from "../CustomIcons";
+import { BrandDownIcon, BrandNavLeftIcon, BrandNavRightIcon } from "../CustomIcons";
 
 // Settings for the slider
 const settings = {
@@ -66,30 +66,33 @@ function handleHideArrow(params) {
       {/* Left Icon */}
       <IconButton
         className={`arrow ${arrow?'show':'hide'}`}
+        borderRadius={'100%'}
         aria-label="left-arrow"
         variant="slider_arrow"
         position="absolute"
         left={side}
         top={top}
-        transform={"translate(0%, -50%)"}
+        transform={"scale(0.6) rotate(90deg)"}
         zIndex={2}
         onClick={() => slider?.slickPrev()}
       >
-        <BrandNavLeftIcon size="40px"/>
+        <BrandDownIcon />
       </IconButton>
       {/* Right Icon */}
       <IconButton
         className={`arrow ${arrow?'show':'hide'}`}
+        borderRadius={'100%'}
         aria-label="right-arrow"
         variant="slider_arrow"
         position="absolute"
+        transform={"scale(0.6) rotate(-90deg)"}
         right={side}
         top={top}
-        transform={"translate(0%, -50%)"}
+        // transform={"translate(0%, -50%)"}
         zIndex={2}
         onClick={() => slider?.slickNext()}
       >
-        <BrandNavRightIcon size="40px"/>
+        <BrandDownIcon />
       </IconButton>
       <Box
       position={"relative"}
@@ -134,6 +137,8 @@ function handleHideArrow(params) {
                   alt={post.title}
                 />
               </Flex>
+              <Flex  flexDirection={'column'} justify={'flex-start'} align={'center'} gap={2} flexGrow={1} w={'360px'} minH={'200px'}>
+
                   {
                     post.text && post.text.map(t=>{
                       return <Text variant="post_text" key={post.title + new Date().toISOString()}>
@@ -143,6 +148,7 @@ function handleHideArrow(params) {
                   }
 
                 
+            </Flex>
             </Flex>
             <Flex w={'100%'} flexGrow={1} align={'center'}>
 

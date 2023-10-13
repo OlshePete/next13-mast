@@ -26,13 +26,13 @@ function ScrollNextPageBlock() {
       aria-label="Scroll down"
       position="fixed"
       transition={"all 2s ease-in-out"}
-      transform={["scale(0.8)", "scale(0.8)", "scale(1)"]}
+      transform={["scale(0.4)", "scale(0.5)", "scale(.6)"]}
       top={"calc(100vh - 90px)"}
       left={["8px", "16px", "24px"]}
       zIndex={200}
       icon={<BrandDownIcon />}
       _hover={{
-        transform:'scale(1.2)',
+        transform:'scale(.8)',
         animation:'none'
       }}
     />

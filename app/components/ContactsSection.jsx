@@ -26,7 +26,7 @@ const ContactsSection = () => {
 
   return (
     <Box className="section dark" mt={20}>
-      <Heading variant="sub_header" py={20} >
+      <Heading  variant="sub_header" position={'relative'}  zIndex={20000}py={20}>
         Контакты
       </Heading>
       <VStack spacing="45px" align={'start'}  px={20}  pt={20}>
