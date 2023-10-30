@@ -162,9 +162,9 @@ export function Providers({
   }) {
   return (
     <CacheProvider>
-      <ChakraProvider theme={theme}>
+      {/* <ChakraProvider theme={theme}> */}
         {children}
-      </ChakraProvider>
+      {/* </ChakraProvider> */}
     </CacheProvider>
   )
 }

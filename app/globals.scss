@@ -56,9 +56,16 @@ header {
   position: absolute;
 }
 
+.white {
+  color:white;
+  font-size:8rem;
+  line-height: 300%;
+}
+
 .section {
   min-height: 100vh;
   background-color: #fff;
+  border: 2px solid red;
 }
 
 .section.dark {

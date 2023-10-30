@@ -17,7 +17,7 @@ const StartSection = () => {
       maxH={`calc(100vh - ${350}px)!important`}
     >
       <Box
-        position="absolute"
+        position="fixed"
         className="start_cover_image"
         top={0}
         zIndex={100}
