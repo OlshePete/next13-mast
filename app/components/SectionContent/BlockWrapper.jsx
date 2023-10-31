@@ -1,12 +1,12 @@
 import { Box, Text } from "@chakra-ui/react";
-import BrandText from "../components/ui/Typography/BrandText";
-import BrandHeading from "../components/ui/Typography/BrandHeading";
+import BrandText from "../ui/Typography/BrandText";
+import BrandHeading from "../ui/Typography/BrandHeading";
 import Image from "next/image";
 
 const BlockWrapper = ({ el, length }) => {
     const { id, title, description, img } = el;
     return (
-        <div className="auto-height__block block" key={id}>
+        <div className="auto-height__block block" key={`${title}_${id}`}>
             <Box className="block__headercount">
                 <Text className="block__id">{id}</Text> /{length}
             </Box>

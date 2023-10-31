@@ -53,6 +53,7 @@ export const theme = extendTheme({
     heading: orchidea_pro.style.fontFamily,
     text:`'Spectral'`,
     body: `'Spectral'`,
+    ListItem: `'Spectral'`,
   },
   styles:{
     global:{
@@ -112,7 +113,6 @@ export const theme = extendTheme({
         post_text: {
           color: "lightgrey",
           fontStyle: "normal",
-          lineHeight: "119.5%",
           fontSize: '22px',
           fontWeight: 300,
           lineHeight: '30px',
@@ -146,12 +146,13 @@ export const theme = extendTheme({
         section_header: {
           color:'brand.800',
           textShadow:'0px 4px 4px rgba(255, 255, 255, 0.05)',
-          fontSize:['32px','44px','64px'],
+          // fontSize:['32px','44px','64px'],
+          fontSize:['18px','34px','44px','64px'],
           fontStyle:'normal',
           fontFamily:orchidea_pro.style.fontFamily,
           fontWeight:'700',
-          lineHeight:'119.5%',
-          letterSpacing:'3.84px',
+          lineHeight:'76.48px',
+          letterSpacing:'6%',
           textTransform:'uppercase',
           maxWidth:'100%'
         },
@@ -206,7 +207,7 @@ export const theme = extendTheme({
         regular: {
           color: "brand.800",
           textShadow: "0px 4px 4px rgba(255, 255, 255, 0.05)",
-          fontSize: "18px",
+          fontSize: "28px",
           fontStyle: "normal",
           fontWeight: "500",
           lineHeight: "119.5%",

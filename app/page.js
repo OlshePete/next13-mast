@@ -2,8 +2,7 @@
 import Head from "next/head";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { AboutSection } from "./components/AboutSectionContent/AboutSection";
-import { ContactsSection } from "./components/ContactsSection";
+import { Contacts } from "./components/SectionContent/Contacts";
 import { ProductsSection } from "./components/ProductsSection";
 import { StartSection } from "./components/StartSection";
 import { ResearchesSection } from "./components/ResearchesSection";
@@ -11,7 +10,10 @@ import Header from "./components/Header";
 import { ScrollNextPageBlock } from "./components/ScrollNextPageBlock";
 import BrandHeading from "./components/ui/Typography/BrandHeading";
 import BrandText from "./components/ui/Typography/BrandText";
-import BlockWrapper from "./components/BlockWrapper";
+import BlockWrapper from "./components/SectionContent/BlockWrapper";
+import EmployeeBlock from "./components/SectionContent/EmployeeBlock";
+import YandexMap from "./components/SectionContent/YandexMap";
+import { AboutCenter } from "./components/SectionContent/AboutCenter";
 
 const researches = [
   {
@@ -270,14 +272,48 @@ export default function Home() {
         <div className="skw-page skw-page-5">
           <div className="skw-page__half skw-page__half--left">
             <div className="skw-page__skewed">
-              <div className="skw-page__content"></div>
+              <div className="skw-page__content">
+                <AboutCenter />
+              </div>
             </div>
           </div>
           <div className="skw-page__half skw-page__half--right">
             <div className="skw-page__skewed">
               <div className="skw-page__content">
-              <BrandHeading variant="section_header" textAlign="right">О центре</BrandHeading>
-              <BrandText>основные направления</BrandText>
+              <BrandHeading variant="section_header" textAlign="right">основные направления</BrandHeading>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="skw-page skw-page-6">
+          <div className="skw-page__half skw-page__half--left">
+            <div className="skw-page__skewed">
+              <div className="skw-page__content">
+                <BrandHeading variant="section_header">Сотрудники</BrandHeading>
+              </div>
+            </div>
+          </div>
+          <div className="skw-page__half skw-page__half--right">
+            <div className="skw-page__skewed">
+              <div className="skw-page__content auto-height"> 
+               <EmployeeBlock />
+               </div>
+            </div>
+          </div>
+        </div>
+        <div className="skw-page skw-page-7 ">
+          <div className="skw-page__half skw-page__half--left">
+            <div className="skw-page__skewed">
+              <div className="skw-page__content ">
+                <YandexMap/>
+              </div>
+            </div>
+          </div>
+          <div className="skw-page__half skw-page__half--right">
+            <div className="skw-page__skewed">
+              <div className="skw-page__content">
+              <BrandHeading variant="section_header" textAlign="right" mb="20px">Контакты</BrandHeading>
+              <Contacts/>
               </div>
             </div>
           </div>
