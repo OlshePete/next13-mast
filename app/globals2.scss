@@ -100,7 +100,10 @@ $scrollTime: 1s;
       font-size: 6rem;
       min-width: 100%;
       min-height: 600px;
-    }
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      }
     .skw-page__half--left & {
       padding-left: 30%;
       // padding-right: 30%;

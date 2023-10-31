@@ -319,9 +319,9 @@ body::-webkit-scrollbar {
 }
 
 .block {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
 
   &__headercount {
     position: absolute;
@@ -344,11 +344,5 @@ body::-webkit-scrollbar {
     letter-spacing: 0.06em;
     color: white;
     margin-right: 10px;
-  }
-
-  &__img {
-    align-self: center;
-    // margin-bottom: 1rem;
-    // border: 1px solid rgb(253, 198, 19);
   }
 }

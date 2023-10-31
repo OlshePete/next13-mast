@@ -11,8 +11,7 @@ import Header from "./components/Header";
 import { ScrollNextPageBlock } from "./components/ScrollNextPageBlock";
 import BrandHeading from "./components/ui/Typography/BrandHeading";
 import BrandText from "./components/ui/Typography/BrandText";
-import Image from "next/image";
-import { Box, Text } from "@chakra-ui/react";
+import BlockWrapper from "./components/BlockWrapper";
 
 const researches = [
   {
@@ -221,24 +220,11 @@ export default function Home() {
           <div className="skw-page__half skw-page__half--right">
             <div className="skw-page__skewed">
               <div className="skw-page__content auto-height"> 
-               {/* {
-                [1,2,3,4,5,6].map(el=><div key={el} className="auto-height__block block">{el}</div>)
-               } */}
-                {
+                 {
                   researches.map(el =>
-                    <div className="auto-height__block block" key={el.id}>
-                      <Box className="block__headercount">
-                        <Text className="block__id">{el.id}</Text> /{researches.length}
-                      </Box>
-                      <BrandHeading variant="post_header" textAlign='right'>{el.title}</BrandHeading>
-                      <BrandText textAlign='right'>{el.description}</BrandText>
-                      <Box className="block__img">
-                        <Image src={el.img} alt={el.title} width={350} height={200} objectFit="cover" />
-                      </Box>
-                      <BrandText variant="link_text" textAlign='right'>развернуть описание</BrandText>
-                    </div>
+                    <BlockWrapper el={el} length={researches.length} />
                   )
-                }                
+                }               
                </div>
             </div>
           </div>

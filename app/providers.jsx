@@ -111,18 +111,19 @@ export const theme = extendTheme({
         },
         post_text: {
           color: "lightgrey",
-          fontSize: "18px",
           fontStyle: "normal",
-          fontWeight: "300",
           lineHeight: "119.5%",
-          letterSpacing: "2.64px",
+          fontSize: '22px',
+          fontWeight: 300,
+          lineHeight: '30px',
+          letterSpacing: '0em',
+
         },
         link_text: {
           fontSize: '18px',
           fontWeight: 300,
           lineHeight: '24px',
           letterSpacing: '0em',
-          textAlign: 'right',
           color: '#A8D4AF33',
         },
       },
