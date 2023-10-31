@@ -116,7 +116,15 @@ export const theme = extendTheme({
           fontWeight: "300",
           lineHeight: "119.5%",
           letterSpacing: "2.64px",
-        }
+        },
+        link_text: {
+          fontSize: '18px',
+          fontWeight: 300,
+          lineHeight: '24px',
+          letterSpacing: '0em',
+          textAlign: 'right',
+          color: '#A8D4AF33',
+        },
       },
     },
     Heading: {
@@ -164,14 +172,15 @@ export const theme = extendTheme({
           textShadow:'0px 4px 4px rgba(255, 255, 255, 0.05)',
           textAlign:'right',
           // fontFamily:'Orchidea Pro',
-          fontSize:['34px'],
+          fontSize:['28px'],
           fontStyle:'normal',
           fontWeight:'200',
-          lineHeight:'119.5%',
-          letterSpacing:'2.64px',
+          lineHeight:'33.46px',
+          letterSpacing:'6%',
           textTransform:'uppercase',
           maxWidth:'min(720px, 100%)'
         },
+
       }
     },
     Button:{

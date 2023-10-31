@@ -11,6 +11,8 @@ import Header from "./components/Header";
 import { ScrollNextPageBlock } from "./components/ScrollNextPageBlock";
 import BrandHeading from "./components/ui/Typography/BrandHeading";
 import BrandText from "./components/ui/Typography/BrandText";
+import Image from "next/image";
+import { Box, Text } from "@chakra-ui/react";
 
 const researches = [
   {
@@ -225,17 +227,15 @@ export default function Home() {
                 {
                   researches.map(el =>
                     <div className="auto-height__block block" key={el.id}>
-                      <div className="block__headercount">
-                        <span className="block__id">{el.id}</span> /{researches.length}
-                      </div>
-                      <div className="block__title">
-                        {el.title}
-                      </div>
+                      <Box className="block__headercount">
+                        <Text className="block__id">{el.id}</Text> /{researches.length}
+                      </Box>
+                      <BrandHeading variant="post_header" textAlign='right'>{el.title}</BrandHeading>
                       <BrandText textAlign='right'>{el.description}</BrandText>
-                      <div className="block__img">
-                        <img src={el.img} alt={el.title} />
-                      </div>
-                      <div className="block__link"> развернуть описание </div>
+                      <Box className="block__img">
+                        <Image src={el.img} alt={el.title} width={350} height={200} objectFit="cover" />
+                      </Box>
+                      <BrandText variant="link_text" textAlign='right'>развернуть описание</BrandText>
                     </div>
                   )
                 }                
@@ -290,8 +290,8 @@ export default function Home() {
           <div className="skw-page__half skw-page__half--right">
             <div className="skw-page__skewed">
               <div className="skw-page__content">
-                <h2 className="skw-page__heading">Epic finale</h2>
-                <p className="skw-page__description">Feel free to check</p>
+              <BrandHeading variant="section_header" textAlign="right">О центре</BrandHeading>
+              <BrandText>основные направления</BrandText>
               </div>
             </div>
           </div>
