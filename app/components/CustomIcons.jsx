@@ -325,8 +325,12 @@ const LogoEU = () => (
     transition={"all .5s ease"}
   >
     <path
-      id="icon_caption"
-      d="M0.27555 166.966H117.315V196.516H0V166.966H0.27555ZM116.695 167.603H0.619986V195.879H116.695V167.603Z"
+      id="icon_caption_border"
+      d="M0.27555 166.516H0V166 167.619986V195.879H116.695V167.603Z"
+    />
+    <path
+      id="icon_caption_border_before"
+      d="M0.27555 166.516H0V166 167.619986V195.879H116.695V167.603Z"
     />
     <path
       id="icon_caption"

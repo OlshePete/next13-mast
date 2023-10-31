@@ -65,7 +65,6 @@ body::-webkit-scrollbar {
 .section {
   min-height: 100vh;
   background-color: #fff;
-  border: 2px solid red;
 }
 
 .section.dark {
@@ -273,6 +272,37 @@ body::-webkit-scrollbar {
 .main_logo_icon>*>#icon_caption {
   animation: change_vision_0 2.5s ease-in-out;
 }
+
+#box_logo_change_color:hover #icon_caption_border {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 300;
+}
+
+#box_logo_change_color:hover #icon_caption_border_before {
+  stroke-dashoffset: 300;
+  stroke-dasharray: -300;
+}
+
+#icon_caption_border {
+  stroke-dasharray: 300;
+  stroke-dashoffset: -300;
+  stroke-width: 1px;
+  fill: transparent;
+  stroke: rgb(253, 198, 19);
+  transition-timing-function: linear;
+  transition: stroke-dashoffset 0.7s;
+}
+
+#icon_caption_border_before {
+  stroke-dasharray: 300;
+  /* stroke-dashoffset: 0; */
+  stroke-width: 1px;
+  fill: transparent;
+  stroke: #FEFEFE;
+  transition-timing-function: linear;
+  transition: stroke-dashoffset 0.7s;
+}
+
 
 .icon>#border {
   transition: all .8s ease;
