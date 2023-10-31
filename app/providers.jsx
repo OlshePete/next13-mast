@@ -2,7 +2,7 @@
 
 import { CacheProvider } from '@chakra-ui/next-js'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
-
+import localFont from '@next/font/local'
 const colors = {
   brand: {
     900: "#A8D4AF",
@@ -10,11 +10,47 @@ const colors = {
     700: "#22356f",
   },
 };
-
+export const orchidea_pro = localFont({
+  src: [
+    {
+      path: '../public/fonts/OrchideaPro/OrchideaPro-ExtraLight.otf',
+      weight: '200'
+    },
+    {
+      path: '../public/fonts/OrchideaPro/OrchideaPro-Light.otf',
+      weight: '300'
+    },
+    {
+      path: '../public/fonts/OrchideaPro/OrchideaPro-Regular.otf',
+      weight: '400'
+    },
+    {
+      path: '../public/fonts/OrchideaPro/OrchideaPro-Medium.otf',
+      weight: '500'
+    },
+    {
+      path: '../public/fonts/OrchideaPro/OrchideaPro-SemiBold.otf',
+      weight: '600'
+    },
+    {
+      path: '../public/fonts/OrchideaPro/OrchideaPro-Bold.otf',
+      weight: '700'
+    },
+    {
+      path: '../public/fonts/OrchideaPro/OrchideaPro-ExtraBold.otf',
+      weight: '800'
+    },
+    {
+      path: '../public/fonts/OrchideaPro/OrchideaPro-Black.otf',
+      weight: '900'
+    }
+  ],
+  variable: '--font-orchidea-pro'
+})
 export const theme = extendTheme({
   colors,
   fonts: {
-    heading: `'Spectral'`,
+    heading: orchidea_pro.style.fontFamily,
     text:`'Spectral'`,
     body: `'Spectral'`,
   },
@@ -35,7 +71,7 @@ export const theme = extendTheme({
           color: "#FFF",
           cursor: "pointer",
           textShadow: "0px 4px 4px rgba(255, 255, 255, 0.05)",
-          // fontFamily: "Orchidea Pro",
+          // fontFamily: orchidea_pro.style.fontFamily,
           fontSize: "44px",
           fontStyle: "normal",
           fontWeight: "600",
@@ -91,11 +127,24 @@ export const theme = extendTheme({
           // fontFamily:'Orchidea Pro',
           fontSize:['32px','36px','44px'],
           fontStyle:'normal',
-          fontWeight:'200',
+          fontFamily:orchidea_pro.style.fontFamily,
+          fontWeight:'300',
           lineHeight:'119.5%',
           letterSpacing:'2.64px',
           textTransform:'uppercase',
           maxWidth:'min(620px, 100%)'
+        },
+        section_header: {
+          color:'brand.800',
+          textShadow:'0px 4px 4px rgba(255, 255, 255, 0.05)',
+          fontSize:['32px','44px','64px'],
+          fontStyle:'normal',
+          fontFamily:orchidea_pro.style.fontFamily,
+          fontWeight:'700',
+          lineHeight:'119.5%',
+          letterSpacing:'3.84px',
+          textTransform:'uppercase',
+          maxWidth:'100%'
         },
         sub_header:{
           color:'brand.800',
@@ -162,9 +211,9 @@ export function Providers({
   }) {
   return (
     <CacheProvider>
-      {/* <ChakraProvider theme={theme}> */}
+      <ChakraProvider theme={theme}>
         {children}
-      {/* </ChakraProvider> */}
+      </ChakraProvider>
     </CacheProvider>
   )
 }

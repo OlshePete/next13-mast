@@ -9,6 +9,8 @@ import { StartSection } from "./components/StartSection";
 import { ResearchesSection } from "./components/ResearchesSection";
 import Header from "./components/Header";
 import { ScrollNextPageBlock } from "./components/ScrollNextPageBlock";
+import BrandHeading from "./components/ui/Typography/BrandHeading";
+import BrandText from "./components/ui/Typography/BrandText";
 
 export default function Home() {
   const [curPage, setCurPage] = useState(1);
@@ -18,8 +20,6 @@ export default function Home() {
   const [pgPrefix] = useState(".skw-page-");
   const [leftScroll, setLeftScroll] = useState(0);
   const [rightScroll, setRightScroll] = useState(0);
-    console.log('NAV curPage state ', curPage);
-    console.log('NAV scrolling', scrolling);
 
   const navigateUp = () => {
     if (curPage === 1) return;
@@ -35,12 +35,12 @@ export default function Home() {
 
   useEffect(() => {
     const handleScroll = (e) => {
-      console.log(e.target.className);
+      console.log(typeof e.target.className);
       if (scrolling) return;
      
       const width = document.body.clientWidth;
       const x = e.clientX
-      if (e.target.className.includes("auto-height")) {
+      if (e.target.className?.includes("auto-height")) {
          if (x > (width/2)) {
           // Прокрутка на правой части экрана
           if (e.deltaY < 0) {
@@ -94,6 +94,26 @@ export default function Home() {
     };
   }, [ scrolling]);
 
+
+  useEffect(() => {
+    const autoScrollElements = document.getElementsByClassName("auto-height");
+    
+    const handleScrollAutoHeightContent = (event) => {
+      // Обработка события прокрутки
+      console.log('Обработка события прокрутки',event.target.parentElement.parentElement);
+    };
+
+    Array.from(autoScrollElements).forEach((element) => {
+      element.addEventListener("scroll", handleScrollAutoHeightContent);
+    });
+
+    return () => {
+      Array.from(autoScrollElements).forEach((element) => {
+        element.removeEventListener("scroll", handleScrollAutoHeightContent);
+      });
+    };
+  }, []);
+
   useEffect(() => {
     setNumOfPages(document.querySelectorAll(".skw-page").length);
   }, []);
@@ -136,12 +156,19 @@ export default function Home() {
         <link rel="shortcut icon" href="/favicon.ico" />
         <title>Прикладной центр МАСТ</title>
       </Head>
+
+        <Header/>
       <div className="skw-pages">
         <div className="skw-page skw-page-1 active">
           <div className="skw-page__half skw-page__half--left">
             <div className="skw-page__skewed">
               <div className="skw-page__content">
-                <h2 className="skw-page__heading">Прикладной центр машинного обучения, анализа данных и статистики</h2></div>
+                <BrandHeading>
+                {/* <h2 className="skw-page__main-heading"> */}
+                  Прикладной центр машинного обучения, анализа данных и статистики
+                  {/* </h2> */}
+                </BrandHeading>
+                </div>
             </div>
           </div>
           <div className="skw-page__half skw-page__half--right">
@@ -155,10 +182,9 @@ export default function Home() {
           <div className="skw-page__half skw-page__half--left">
             <div className="skw-page__skewed">
               <div className="skw-page__content">
-                <h2 className="skw-page__heading">Исследования</h2>
-                <p className="skw-page__description">
-                  
-                </p>
+                <BrandHeading variant="section_header">Исследования</BrandHeading>
+                <BrandText >обработка естественного языка и компьютерное зрение</BrandText>
+
               </div>
             </div>
           </div>
@@ -176,14 +202,18 @@ export default function Home() {
         <div className="skw-page skw-page-3">
           <div className="skw-page__half skw-page__half--left">
             <div className="skw-page__skewed">
-              <div className="skw-page__content  auto-height"> auto-height </div>
+              <div className="skw-page__content  auto-height"> 
+               {
+                [1,2,3].map(el=><div key={el} className="auto-height__block block">{el}</div>)
+               }
+                </div>
             </div>
           </div>
           <div className="skw-page__half skw-page__half--right">
             <div className="skw-page__skewed">
               <div className="skw-page__content">
-                <h2 className="skw-page__heading">Разработка</h2>
-                <p className="skw-page__description">The end is near, I promise!</p>
+                <BrandHeading variant="section_header" textAlign="right">Разработка</BrandHeading>
+                <BrandText  textAlign="right"> для исследователей  <br/>в социогуманитарных областях</BrandText>
               </div>
             </div>
           </div>
@@ -192,16 +222,18 @@ export default function Home() {
           <div className="skw-page__half skw-page__half--left">
             <div className="skw-page__skewed">
               <div className="skw-page__content">
-                <h2 className="skw-page__heading">Обучение</h2>
-                <p className="skw-page__description">
-                  Ok, ok, just one more scroll!
-                </p>
+                <BrandHeading variant="section_header" >Обучение</BrandHeading>
+                <BrandText>экспертное сопровождение <br/>и  обеспечение практик</BrandText>
               </div>
             </div>
           </div>
           <div className="skw-page__half skw-page__half--right">
             <div className="skw-page__skewed">
-              <div className="skw-page__content auto-height"> auto-height</div>
+              <div className="skw-page__content auto-height"> 
+               {
+                [1,2].map(el=><div key={el} className="auto-height__block block">{el}</div>)
+               }
+               </div>
             </div>
           </div>
         </div>

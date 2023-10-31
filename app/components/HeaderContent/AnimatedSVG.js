@@ -21,12 +21,13 @@ const BoxLogo = ({ children, height, display }) => {
 const AnimatedSVG = () => {
   const { scrollY } = useScroll();
   const heightSizes = [200, 100];
-  const height = useTransform(scrollY, [0, 320], heightSizes);
+  const height = useTransform(scrollY, [0, 10], heightSizes);
 
   useEffect(() => {
     height.set(200 + scrollY);
   }, [scrollY]);
 
+  console.log("scrollY",scrollY?.current,height.current )
   return (
     <MotionBox
       as={VStack}
@@ -47,6 +48,7 @@ const AnimatedSVG = () => {
       </Box>
       <HStack
         style={{
+          display:height.get()===100?'none':'inherit',
           overflow: "hidden",
           alignItems: "flex-start",
           minHeight: "50px",
@@ -55,21 +57,21 @@ const AnimatedSVG = () => {
         <Link href={"https://eusp.org/"} isExternal>
           <BoxLogo
             height={height.get()}
-            display={scrollY.get() < 200 ? "block" : "none"}
+            display={scrollY.get() < 100 ? "block" : "none"}
           >
             <LogoEU />
           </BoxLogo>
         </Link>
         <BoxLogo
           height={height.get()}
-          display={scrollY.get() < 200 ? "block" : "none"}
+          display={scrollY.get() < 100 ? "block" : "none"}
         >
           <LogoBigDash />
         </BoxLogo>
         <Link href={"https://ya.ru/"} isExternal>
           <BoxLogo
             height={height.get()}
-            display={scrollY.get() < 200 ? "block" : "none"}
+            display={scrollY.get() < 100 ? "block" : "none"}
           >
             <LogoYa />
           </BoxLogo>

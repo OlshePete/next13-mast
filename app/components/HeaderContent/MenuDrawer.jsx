@@ -9,6 +9,7 @@ import {
 import Image from "next/image";
 // import Link from "next/link";
 import { CustomCloseIcon } from "../CustomIcons";
+import { HeaderLogo } from "./HeaderLogo";
 // import { useDisclosure } from "@chakra-ui/react";
 
 const NAV_ITEMS = [
@@ -65,15 +66,9 @@ const MenuDrawer = ({ isOpen, onToggle }) => {
           <Box onClick={onToggle} position="absolute" top="50px" right="50px">
             <CustomCloseIcon />
           </Box>
-          <Box h="100%" pt="150px">
-            <Image
-              src="/logo-full-rus.svg"
-              alt="Next.js Logo"
-              width={337}
-              height={196}
-              alignSelf="flex-start"
-              priority
-            />
+          <Box h="100%" w="100%" position={'relative'}
+      pt={["8px","8px","12px"]}>
+          <HeaderLogo/>
           </Box>
 
           <Stack>

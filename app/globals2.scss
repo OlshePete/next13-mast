@@ -9,7 +9,13 @@ body {
   background: #1585cf;
   font-family: $openSans;
 }
-
+header {
+  position: absolute;
+  width: 100vw;
+  z-index: 1000;
+  top:0;
+  left:0;
+}
 .skw-pages {
   overflow: hidden;
   position: relative;
@@ -75,7 +81,7 @@ $scrollTime: 1s;
     top: 0;
     width: 100%;
     height: 100%;
-    padding: 0 30%;
+    padding: 0;
     color: #fff;
     transform: skewX($skewDeg);
     transition: transform $scrollTime, opacity $scrollTime;
@@ -93,16 +99,16 @@ $scrollTime: 1s;
       padding: 4rem;
       font-size: 6rem;
       min-width: 100%;
-      min-height: 400px;
+      min-height: 800px;
     }
     .skw-page__half--left & {
-      // padding-left: 30%;
+      padding-left: 30%;
       // padding-right: 30%;
       transform-origin: 100% 0;
     }
     .skw-page__half--right & {
       // padding-left: 30%;
-      // padding-right: 30%;
+      padding-right: 30%;
       transform-origin: 0 100%;
     }
 
@@ -112,16 +118,18 @@ $scrollTime: 1s;
     }
   }
 
+  & > * {
+    text-align: left;
+  }
   &__heading {
-    margin-bottom: 15px;
     text-transform: uppercase;
-    font-size: 25px;
-    text-align: center;
+    font-size: 64px;
+    text-align: left;
   }
 
   &__description {
     font-size: 18px;
-    text-align: center;
+    text-align: left;
   }
   
   &__link {
@@ -134,7 +142,8 @@ $scrollTime: 1s;
       text-align: left;
     }
     .skw-page__half--right .skw-page__content {
-      background-image: url('../public/start-image.png');
+      // background-image: url();
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, rgba(34, 53, 111, 0.60) 0%, rgba(34, 53, 111, 0.60) 100%), url('../public/start-image.png'), lightgray -219.079px -34px / 151.509% 106.226% no-repeat;
       background-size: max(50vw,730px) 100vh;
       background-position: left;
       background-repeat: no-repeat;
@@ -142,6 +151,7 @@ $scrollTime: 1s;
   }
   &-2 {
     .skw-page__half--left .skw-page__content {
+      align-items: flex-start;
       background: lighten(#1C1C1C, 5%);
     }
     .skw-page__half--right .skw-page__content {
@@ -154,22 +164,25 @@ $scrollTime: 1s;
     }
     .skw-page__half--right .skw-page__content {
       background: lighten(#1C1C1C, 5%);
+      align-items: flex-end;
     }
   }
   &-4 {
     .skw-page__half--left .skw-page__content {
       background: lighten(#1C1C1C, 5%);
+      align-items: flex-start;
     }
     .skw-page__half--right .skw-page__content {
       background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/sections-3.jpg');
     }
   }
   &-5 {
-    .skw-page__half--left .skw-page__content {
-      background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/sections-3.jpg');
+    .skw-page__half--left .skw-page__content { 
+      background: lighten(#22356F, 5%);
+
     }
     .skw-page__half--right .skw-page__content {
-      background: lighten(#3d0dea, 5%);
+      background: lighten(#22356F, 5%);
     }
   }
 }

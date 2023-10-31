@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import "./globals2.scss";
-import "./globalsScroll.scss";
+import "./globals.scss";
 import { Providers } from "./providers";
 
 export default function RootLayout({ children }) {
