@@ -12,6 +12,34 @@ import { ScrollNextPageBlock } from "./components/ScrollNextPageBlock";
 import BrandHeading from "./components/ui/Typography/BrandHeading";
 import BrandText from "./components/ui/Typography/BrandText";
 
+const researches = [
+  {
+    id: 1,
+    title: "Сверхурочная работа в госзакупках России",
+    description: "Исследование открытых данных о времени публикации контрактов в системе ЕИС «Закупки».",
+    img: "/research.png",
+  },
+  {
+    id: 2,
+    title: "Музейное наследие России",
+    description: "МузеоГраф позволяет осуществлять эффективных поиск среди нескольких десятков миллионов предметов, хранящихся в больших и малых музеях России.",
+    img: "/museum.png",
+  },
+  {
+    id: 3,
+    title: "Лексикон 10 века",
+    description: "МузеоГраф позволяет осуществлять эффективных поиск среди нескольких десятков миллионов предметов, хранящихся в больших и малых музеях России.",
+    img: "/research.png",
+  },
+  {
+    id: 4,
+    title: "Разработка методов и алгоритмов компьютерного зрения",
+    description: "Разработка методов и алгоритмов компьютерного зрения",
+    img: "/museum.png",
+  },
+];
+
+
 export default function Home() {
   const [curPage, setCurPage] = useState(1);
   const [numOfPages, setNumOfPages] = useState(0);
@@ -191,10 +219,26 @@ export default function Home() {
           <div className="skw-page__half skw-page__half--right">
             <div className="skw-page__skewed">
               <div className="skw-page__content auto-height"> 
-               {
+               {/* {
                 [1,2,3,4,5,6].map(el=><div key={el} className="auto-height__block block">{el}</div>)
-               }
-              
+               } */}
+                {
+                  researches.map(el =>
+                    <div className="auto-height__block block" key={el.id}>
+                      <div className="block__headercount">
+                        <span className="block__id">{el.id}</span> /{researches.length}
+                      </div>
+                      <div className="block__title">
+                        {el.title}
+                      </div>
+                      <BrandText textAlign='right'>{el.description}</BrandText>
+                      <div className="block__img">
+                        <img src={el.img} alt={el.title} />
+                      </div>
+                      <div className="block__link"> развернуть описание </div>
+                    </div>
+                  )
+                }                
                </div>
             </div>
           </div>

@@ -92,14 +92,14 @@ $scrollTime: 1s;
       justify-content: flex-start;
       gap:2rem;
       padding: 4rem 0;
-      background-color: #22356F;
+      // background-color: #22356F;
     }
     &>.block {
-      background: #FFA0A0;
+      background: #22356F;
       padding: 4rem;
       font-size: 6rem;
       min-width: 100%;
-      min-height: 800px;
+      min-height: 600px;
     }
     .skw-page__half--left & {
       padding-left: 30%;

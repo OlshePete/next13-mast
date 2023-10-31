@@ -57,8 +57,8 @@ body::-webkit-scrollbar {
 }
 
 .white {
-  color:white;
-  font-size:8rem;
+  color: white;
+  font-size: 8rem;
   line-height: 300%;
 }
 
@@ -315,5 +315,68 @@ body::-webkit-scrollbar {
 
   to {
     background-position: 200% 0%;
+  }
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__headercount {
+    position: absolute;
+    left: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 38px;
+    letter-spacing: 0.06em;
+    text-align: right;
+    color: #A8D4AF33;
+  }
+
+  &__id {
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 76px;
+    letter-spacing: 0.06em;
+    color: white;
+    margin-right: 10px;
+  }
+
+  &__title {
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    line-height: 33px;
+    letter-spacing: 0.05em;
+    text-align: right;
+
+  }
+
+  &__link {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: right;
+    color: #A8D4AF33;
+  }
+
+  &__img {
+    width: 350px;
+    height: 200px;
+    overflow: hidden;
+    align-self: center;
+    // margin-bottom: 1rem;
+    // border: 1px solid rgb(253, 198, 19);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 }
