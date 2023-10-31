@@ -4,17 +4,18 @@ import BrandHeading from "../components/ui/Typography/BrandHeading";
 import Image from "next/image";
 
 const BlockWrapper = ({ el, length }) => {
+    const { id, title, description, img } = el;
     return (
-        <div className="auto-height__block block" key={el.id}>
+        <div className="auto-height__block block" key={id}>
             <Box className="block__headercount">
-                <Text className="block__id">{el.id}</Text> /{length}
+                <Text className="block__id">{id}</Text> /{length}
             </Box>
-            <BrandHeading variant="post_header" textAlign='right'>{el.title}</BrandHeading>
-            <BrandText textAlign='right'>{el.description}</BrandText>
+            <BrandHeading variant="post_header" textAlign='right'>{title}</BrandHeading>
+            <BrandText textAlign='right'>{description}</BrandText>
             <Image
                 style={{ alignSelf: "center" }}
-                src={el.img}
-                alt={el.title}
+                src={img}
+                alt={title}
                 width={350}
                 height={200}
                 objectFit="cover"
