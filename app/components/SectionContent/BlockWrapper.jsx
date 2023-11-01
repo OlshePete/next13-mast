@@ -6,7 +6,7 @@ import Image from "next/image";
 const BlockWrapper = ({ el, length }) => {
     const { id, title, description, img } = el;
     return (
-        <div className="auto-height__block block" key={`${title}_${id}`}>
+        <div className="auto-height__block block">
             <Box className="block__headercount">
                 <Text className="block__id">{id}</Text> /{length}
             </Box>

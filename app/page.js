@@ -195,9 +195,7 @@ export default function Home() {
             <div className="skw-page__skewed">
               <div className="skw-page__content">
                 <BrandHeading>
-                {/* <h2 className="skw-page__main-heading"> */}
                   Прикладной центр машинного обучения, анализа данных и статистики
-                  {/* </h2> */}
                 </BrandHeading>
                 </div>
             </div>
@@ -224,7 +222,7 @@ export default function Home() {
               <div className="skw-page__content auto-height"> 
                  {
                   researches.map(el =>
-                    <BlockWrapper el={el} length={researches.length} />
+                    <BlockWrapper el={el} length={researches.length} key={`${el.title}_${el.id}`} />
                   )
                 }               
                </div>
