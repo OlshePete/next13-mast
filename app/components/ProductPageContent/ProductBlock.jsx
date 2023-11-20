@@ -44,9 +44,7 @@ function ProductBlock({ index, item }) {
   return (
     <Box
       bg="brand.700"
-
       // border={"3px solid green"}
-      zIndex={1000 + index}
       position={"sticky"}
       top={"50px"}
       h={"calc(100vh - 120px)"}

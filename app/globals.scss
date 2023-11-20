@@ -2,7 +2,6 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  scroll-behavior: smooth;
 }
 
 body {
@@ -33,17 +32,16 @@ body::-webkit-scrollbar {
 }
 
 
-// header {
-//   position: sticky;
-//   /* padding: 0 50px; */
-//   top: 0;
-//   max-width: 100vw;
-//   z-index: 1000;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-// }
-
+header {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 1000;
+}
+.c-scroll-opacity {
+    opacity: 1 !important;
+    transition: opacity 0.75s cubic-bezier(0.38, 0.005, 0.215, 1);
+}
 .fade-in {
   opacity: 1;
   position: relative;
@@ -354,8 +352,6 @@ body::-webkit-scrollbar {
   // justify-content: space-between;
 
   &__headercount {
-    position: absolute;
-    left: 25px;
     display: flex;
     flex-direction: row;
     align-items: center;

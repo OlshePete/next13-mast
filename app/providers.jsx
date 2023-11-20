@@ -113,6 +113,7 @@ export const theme = extendTheme({
         post_text: {
           color: "lightgrey",
           fontStyle: "normal",
+          fontFamily: orchidea_pro.style.fontFamily,
           fontSize: '22px',
           fontWeight: 300,
           lineHeight: '30px',

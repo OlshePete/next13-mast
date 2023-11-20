@@ -8,7 +8,7 @@ import {MenuDrawer} from './MenuDrawer'
 function HeaderContent() {
   const { isOpen, onToggle } = useDisclosure();
   return (
-    <Box flexGrow={1} display={'flex'} justifyContent={'space-between'}>
+    <Box flexGrow={1} display={'flex'} justifyContent={'space-between'} >
     <HeaderLogo />
     <HeaderMenuIcon isOpen={isOpen} onToggle={onToggle}/>
     <MenuDrawer  isOpen={isOpen} onToggle={onToggle}/>

@@ -2,6 +2,7 @@
 import { Box, Flex, List, ListItem, Text } from "@chakra-ui/react";
 import React from "react";
 import { ProductBlock } from "./ProductBlock";
+import BlockWrapper from "../SectionContent/BlockWrapper";
 const PROD_ITEMS_LIST = [
   {
     name: "исследования",
@@ -27,16 +28,16 @@ function ProductContent() {
       ?.scrollIntoView({ block: "end", behavior: "smooth" });
   }
   return (
-    <Flex position={"sticky"} top={"50px"}>
+    <Flex >
       <Flex
-        flexGrow={1}
-        maxW={"auto"}
+        minW={"50vw"}
         h={"90vh"}
         alignItems={"center"}
-        position={"sticky"}
-        top={"50px"}
+        // position={"sticky"}
+        // top={"50px"}
         display={['none','none','flex']}
         direction={['column','column','row']}
+        bg={'red'}
       >
         <List spacing={6}>
           {PROD_ITEMS_LIST.map((item, index) => (
@@ -66,9 +67,9 @@ function ProductContent() {
         p={{base:"250px 0",md:"150px 60px"}}
       >
         {PROD_ITEMS_LIST.map((item, index) =>
-        <ProductBlock
+        <BlockWrapper
           index={index}
-          item={item}
+          el={item}
           key={"block " + item.name + index}
         />)}
       </Flex>
