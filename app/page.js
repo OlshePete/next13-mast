@@ -16,8 +16,48 @@ import YandexMap from "./components/SectionContent/YandexMap";
 import { AboutCenter } from "./components/SectionContent/AboutCenter";
 
 const content =  {
-  education:[],
-  development:[],
+  education:[
+  {
+    title: "Сверхурочная работа в госзакупках России",
+    description: "Исследование открытых данных о времени публикации контрактов в системе ЕИС «Закупки».",
+    img: "/research.png",
+  },
+  {
+    title: "Музейное наследие России",
+    description: "МузеоГраф позволяет осуществлять эффективных поиск среди нескольких десятков миллионов предметов, хранящихся в больших и малых музеях России.",
+    img: "/museum.png",
+  },
+  {
+    title: "Лексикон 10 века",
+    description: "МузеоГраф позволяет осуществлять эффективных поиск среди нескольких десятков миллионов предметов, хранящихся в больших и малых музеях России.",
+    img: "/research.png",
+  },
+  {
+    title: "Разработка методов и алгоритмов компьютерного зрения",
+    description: "Разработка методов и алгоритмов компьютерного зрения",
+    img: "/museum.png",
+  },],
+  development:[
+  {
+    title: "Сверхурочная работа в госзакупках России",
+    description: "Исследование открытых данных о времени публикации контрактов в системе ЕИС «Закупки».",
+    img: "/research.png",
+  },
+  {
+    title: "Музейное наследие России",
+    description: "МузеоГраф позволяет осуществлять эффективных поиск среди нескольких десятков миллионов предметов, хранящихся в больших и малых музеях России.",
+    img: "/museum.png",
+  },
+  {
+    title: "Лексикон 10 века",
+    description: "МузеоГраф позволяет осуществлять эффективных поиск среди нескольких десятков миллионов предметов, хранящихся в больших и малых музеях России.",
+    img: "/research.png",
+  },
+  {
+    title: "Разработка методов и алгоритмов компьютерного зрения",
+    description: "Разработка методов и алгоритмов компьютерного зрения",
+    img: "/museum.png",
+  },],
   research :[
   {
     title: "Сверхурочная работа в госзакупках России",
@@ -206,38 +246,10 @@ export default function Home() {
       <main style={{display:'flex',flexDirection:'column',gap:0}} data-scroll data-scroll-to>
         <Header/>
         <StartSection/>
-        <ResearchesSection list={content.research}/>
-        <div style={{
-          display:"flex",
-          gap:'2rem',
-          minWidth:'100vw',
-          overflowX:'auto'
-        }}>
+        <ResearchesSection list={content.research} title="Исследования" subtitle ="обработка естественного языка и компьютерное зрение"/>
+        <ResearchesSection list={content.development} title="Разработка" subtitle ="для исследователей в социогуманитарных областях" isRight={true}/>
+        <ResearchesSection list={content.education} title="Обучение" subtitle ="экспертное сопровождение и обеспечение практик"/>
 
-        <div data-scroll-speed='0.3' style={{width:'280px',height:'280px', background:'red'}}></div>
-        <div data-scroll-speed='0.3' style={{width:'280px',height:'280px', background:'red'}}></div>
-        <div data-scroll-speed='0.3' style={{width:'280px',height:'280px', background:'red'}}></div>
-        <div data-scroll-speed='0.3' style={{width:'280px',height:'280px', background:'red'}}></div>
-        <div data-scroll-speed='0.3' style={{width:'280px',height:'280px', background:'red'}}></div>
-        <div data-scroll-speed='0.3' style={{width:'280px',height:'280px', background:'red'}}></div>
-        <div data-scroll-speed='0.3' style={{width:'280px',height:'280px', background:'red'}}></div>
-        <div data-scroll-speed='0.3' style={{width:'280px',height:'280px', background:'red'}}></div>
-        <div data-scroll-speed='0.3' style={{width:'280px',height:'280px', background:'red'}}></div>
-        <div data-scroll-speed='0.3' style={{width:'280px',height:'280px', background:'red'}}></div>
-        <div data-scroll-speed='0.3' style={{width:'280px',height:'280px', background:'red'}}></div>
-        <div data-scroll-speed='0.3' style={{width:'280px',height:'280px', background:'red'}}></div>
-        <div data-scroll-speed='0.3' style={{width:'280px',height:'280px', background:'red'}}></div>
-        <div data-scroll-speed='0.3' style={{width:'280px',height:'280px', background:'red'}}></div>
-        <div data-scroll-speed='0.3' style={{width:'280px',height:'280px', background:'red'}}></div>
-        <div data-scroll-speed='0.3' style={{width:'280px',height:'280px', background:'red'}}></div>
-        <div data-scroll-speed='0.3' style={{width:'280px',height:'280px', background:'red'}}></div>
-        <div data-scroll-speed='0.3' style={{width:'280px',height:'280px', background:'red'}}></div>
-        <div data-scroll-speed='0.3' style={{width:'280px',height:'280px', background:'red'}}></div>
-        <div data-scroll-speed='0.3' style={{width:'280px',height:'280px', background:'red'}}></div>
-        </div>
-       
-        {/* 
-        <StartSection/> */}
       </main>
       
     </>
