@@ -11,7 +11,7 @@ const BlockWrapper = ({ el, length, id, isRight, progress, range, targetScale  }
         target:container,
         offset:['start end', 'start start']
     })
-    const scaleImage = useTransform(scrollYProgress,[0,1],[1.4,1])
+    const scaleImage = useTransform(scrollYProgress,[0,1],[1.8,1])
     const scale = useTransform(progress, range,[1,targetScale])
     return (
         <Box 

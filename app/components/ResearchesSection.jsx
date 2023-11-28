@@ -1,5 +1,5 @@
 import { Box, Flex, Grid, GridItem, VStack } from "@chakra-ui/react";
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import BrandHeading from "./ui/Typography/BrandHeading";
 import BrandText from "./ui/Typography/BrandText";
 import BlockWrapper from "./SectionContent/BlockWrapper";
@@ -14,7 +14,7 @@ const ResearchesSection = ({list, title="Исследования", id="research
     offset:['start start', 'end end']
   })
   const top = useTransform(scrollYProgress,[0,1],['20vh','80vh'])
-  useLayoutEffect(() => {
+  useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const timeline = gsap.timeline({
       scrollTrigger: {
